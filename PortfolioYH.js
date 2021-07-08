@@ -97,7 +97,7 @@ window.addEventListener('load', function () {
             this.classList.remove('unfocused');
             this.classList.remove('hide');
             this.classList.add('focused');
-            document.getElementById('navidiv').classList.add('hide');
+            //document.getElementById('navidiv').classList.add('hide');
 
         });
         divs[i].addEventListener('mouseleave', function (evt) {
@@ -106,7 +106,7 @@ window.addEventListener('load', function () {
                 divs[j].classList.remove('focused');
                 divs[j].classList.add('unfocused');
             }
-            document.getElementById('navidiv').classList.remove('hide');
+            //document.getElementById('navidiv').classList.remove('hide');
         });
     }
 });
