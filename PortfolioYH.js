@@ -110,3 +110,42 @@ window.addEventListener('load', function () {
         });
     }
 });
+
+
+function getDocHeight() {
+    var D = document;
+    return Math.max(
+        D.body.scrollHeight, D.documentElement.scrollHeight,
+        D.body.offsetHeight, D.documentElement.offsetHeight,
+        D.body.clientHeight, D.documentElement.clientHeight
+    )
+}
+
+function amountscrolled(){
+    var winheight= window.innerHeight || (document.documentElement || document.body).clientHeight;
+    var docheight = getDocHeight();
+    var scrollTop = window.pageYOffset || 
+    (document.documentElement || document.body.parentNode || document.body).scrollTop;
+    var trackLength = docheight - winheight;
+    var pctScrolled = Math.floor(scrollTop/trackLength * 100); // gets percentage scrolled (ie: 80 or NaN if tracklength == 0)
+    //console.log(pctScrolled + '% scrolled');
+    var whoami = document.getElementById('whoami');
+    var thanksletter = document.getElementById('thanksletter');
+    if (pctScrolled > 35 && pctScrolled < 55) {
+        whoami.style.color = "green";
+        whoami.innerHTML = "梦想家";
+    }
+    else if (pctScrolled < 35) {
+        whoami.style.color = "pink";
+        whoami.innerHTML = "爱好者";
+    } else {
+        whoami.style.color = "yellow";
+        whoami.innerHTML = "实践者";
+        thanksletter.style.opacity = (pctScrolled - 55) / 50;
+        console.log(thanksletter.style.opacity);
+    }
+}
+ 
+window.addEventListener("scroll", function(){
+    if(document.getElementById('home').classList.contains('selected')) amountscrolled();
+}, false);
