@@ -142,7 +142,7 @@ function amountscrolled(){
         whoami.style.color = "yellow";
         whoami.innerHTML = "实践者";
         thanksletter.style.opacity = (pctScrolled - 55) / 50;
-        console.log(thanksletter.style.opacity);
+        //console.log(thanksletter.style.opacity);
     }
 }
  
