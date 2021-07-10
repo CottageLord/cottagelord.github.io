@@ -131,17 +131,17 @@ function amountscrolled(){
     //console.log(pctScrolled + '% scrolled');
     var whoami = document.getElementById('whoami');
     var thanksletter = document.getElementById('thanksletter');
-    if (pctScrolled > 35 && pctScrolled < 55) {
+    if (pctScrolled > 45 && pctScrolled <= 65) {
         whoami.style.color = "green";
         whoami.innerHTML = "梦想家";
     }
-    else if (pctScrolled < 35) {
+    else if (pctScrolled <= 45) {
         whoami.style.color = "pink";
         whoami.innerHTML = "爱好者";
-    } else {
+    } else if (pctScrolled > 65) {
         whoami.style.color = "yellow";
         whoami.innerHTML = "实践者";
-        thanksletter.style.opacity = (pctScrolled - 55) / 50;
+        thanksletter.style.opacity = (pctScrolled - 65) / 40;
         //console.log(thanksletter.style.opacity);
     }
 }
