@@ -7,6 +7,9 @@ html, body {
     max-width: 100%;
 }
 
+html {
+    scroll-behavior: smooth;
+}
 
 .smallImg {
     width: 700;
@@ -135,9 +138,9 @@ fieldset{
 
 .column {
     float: left;
-    width: 25%;
+    width: 23%;
     margin: 0px;
-    padding: 0px;
+    padding: 1%;
     height: 100%;
 }
 #update {
@@ -237,9 +240,9 @@ fieldset{
 
 .overviewdiv {
     float: left;
-    width: 90%;
-    min-height: 100px;
-    margin: 5%;
+    width: 100%;
+    margin-bottom: 10%;
+    min-height: 10px;
     display: inline-block;
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
@@ -251,6 +254,7 @@ fieldset{
 .overviewimg {
     width: 100%;
 }
+
 .tab{
     float: left;
     display: block;
@@ -404,7 +408,7 @@ fieldset{
 }
 
 .selfintro {
-    padding-top: 65%;
+    padding-top: 55%;
     font-size: 50pt;
     text-align: center;
 }
@@ -425,4 +429,32 @@ fieldset{
     height: 20%;
     text-align: center;
     opacity: 0;
+}
+
+.skilldescription {
+    padding-top: 15px;
+}
+
+.darkgreen {
+    background-color: #009933;
+}
+
+.lightyellow{
+    background-color: #ff9933;
+}
+
+.darkblue {
+    background-color: #0066cc;
+}
+
+.drakred {
+    background-color: #cc0000;
+}
+
+.drakpurple {
+    background-color: #660033;
+}
+
+.darkgrey {
+    background-color: #111;
 }
