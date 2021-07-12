@@ -95,7 +95,10 @@
 					</div>
 					<div class="column">
 						<div class="overviewdiv unfocused center" id="engineproj" associated-img="media/bg2_colored.png">
-							<img src="media/dungeon.png" alt="地牢引擎截图" class="center overviewimg">
+							<div class="img__wrap">
+								<img src="media/dungeon.png" alt="地牢引擎截图" class="center overviewimg img__wrap">
+								<a target="_blank" href="media/bg2_colored.png"><p class="img__description center"><br>查看背景原图</p></a>
+							</div>
 							<h2 class="center">C++ 2D游戏引擎</h2>
 							<p class="center">[2021]</p>
 							<br>
@@ -128,14 +131,17 @@
 							<br>
 							<p>参数化的Animator</p>
 							<br>
-							<p>具体描述见上方<br>课程展示页面</p>
+							<p>具体描述见<br><a target="_blank" href="https://cottagelord.github.io/CS5850_Final_project_MoYuGamers/webpage/">课程展示页面</a></p>
 							<br>
 						</div>
 					</div>
 					<div class="column">
 						
 						<div class="overviewdiv unfocused" id="opsysproj" associated-img="media/bg_usloss.jpg">
-							<img src="media/uslosslogo.png" alt="计算机操作系统" class="center overviewimg">
+							<div class="img__wrap">
+								<img src="media/uslosslogo.png" alt="计算机操作系统" class="center overviewimg img__wrap">
+								<a target="_blank" href="media/bg_usloss.jpg"><p class="img__description center"><br>查看背景原图</p></a>
+							</div>
 							<h2 class="center">基于USLOSS的计算机操作系统<br></h2>
 							<p class="center">[2019]</p>
 							<br>
@@ -143,7 +149,10 @@
 							<br>
 						</div>
 						<div class="overviewdiv unfocused" id="2dgame" associated-img="media/bg_2dgame.png">
-							<img src="media/2dgamelogo.png" alt="2d游戏小品" class="center overviewimg">
+							<div class="img__wrap">
+								<img src="media/2dgamelogo.png" alt="2d游戏小品" class="center overviewimg img__wrap">
+								<a target="_blank" href="media/bg_2dgame.png"><p class="img__description center"><br>查看背景原图</p></a>
+							</div>
 							<h2 class="center">2D游戏小品<br></h2>
 							<p class="center">[2018]</p>
 							<ul>
@@ -155,7 +164,10 @@
 					</div>
 					<div class="column">
 						<div class="overviewdiv unfocused" id="algoproj" associated-img="media/bg_algo.jpg">
-							<img src="media/algologo.png" alt="算法可视化" class="center overviewimg">
+							<div class="img__wrap">
+								<img src="media/algologo.png" alt="算法可视化" class="center overviewimg img__wrap">
+								<a target="_blank" href="media/bg_algo.jpg"><p class="img__description center"><br>查看背景原图</p></a>
+							</div>
 							<h2 class="center">算法及其可视化<br></h2>
 							<p class="center">[2018]</p>
 							<ul>
@@ -168,7 +180,10 @@
 							<br>
 						</div>
 						<div class="overviewdiv unfocused" id="hardwareproj"  associated-img="media/bg_303.jpg">
-							<img src="media/303logo.png" alt="Arduino编程" class="center overviewimg">
+							<div class="img__wrap">
+								<img src="media/303logo.png" alt="Arduino编程" class="center overviewimg img__wrap">
+								<a target="_blank" href="media/bg_303.jpg"><p class="img__description center"><br>查看背景原图</p></a>
+							</div>
 							<h2 class="center">Arduino项目<br></h2>
 							<p class="center">[2018]</p>
 							<ul>
@@ -394,9 +409,16 @@
 							<br>
 							<p>游戏规则</p>
 							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
+								<li>游戏开始前，所有玩家获得1张角色卡与3张初始卡牌</li>
+								<li>玩家逆时针进行回合，每回合玩家抽一张卡，然后开始回合</li>
+								<li>当前玩家投掷一枚硬币，选择本回合的行动点数是奇数(1/3/5)还是偶数(0/2/4)</li>
+								<li>移动(消耗1)和使用卡牌(消耗因卡而异)都会消耗行动点，玩家必须花完自己声称的行动点</li>
+								<li>移动会影响玩家在场上的位置，也会影响与其他玩家的距离，攻击等卡牌需要对象在攻击范围内</li>
+								<li>不同的动物在不同的地形(草原，雨林，沼泽)会有不同的表现，比如，动物的攻击无法穿过自己不善长的地形块(如猴子不能越过沼泽进行攻击)，身陷不擅长地块的动物，攻击距离为1。具体的规则详见游戏指南</li>
+								<li>当玩家的血量(初始3)减少至0，且没有得到治疗，则玩家被淘汰</li>
+								<li>回合结束时，玩家手里的卡牌不能超过3张。多出的卡牌需丢弃</li>
+								<li>每两轮结束时，投掷一枚骰子，对应边的地图将消失，在该地区的动物减少一点血，并强制移动至最近的合法格子</li>
+								<li>最后留下的玩家获胜</li>
 							</ul>
 						</div>
 					</div>
@@ -413,7 +435,8 @@
 								<li>搭建了基于Tshock的泰拉瑞亚服务器</li>
 								<li>独立配置了MySQL数据库，实现了跨地图联机</li>
 								<li>基于SEconomy插件，<a target="_blank" href="https://github.com/CottageLord/CS_Courses/tree/main/Notes/Terra/designs">设计</a>并配置了RPG系统</li>
-								<li>长期运营服务器，设计并举办了各类活动，包括但不限于：双倍爆率/经验活动，pvp活动，竞速和各类小游戏。</li>
+								<li>长期运营服务器，设计并举办了各类活动，包括但不限于：双倍爆率/经验活动，pvp活动，竞速和各类小游戏</li>
+								<li>最高在线玩家数约30人</li>
 								<li>撰写了<a target="_blank" href="https://tieba.baidu.com/p/4535763499">开服指南（百度贴吧）</a></li>
 							</ul>
 							<p>玩家在线上修建了我的雕像</p>
@@ -464,7 +487,7 @@
 							<h2 class="center">2D射击塔防游戏<br>爆裂瓜瓜</h2>
 							<p class="center">[2020]</p>
 							<br>
-							<p>爆裂瓜瓜是一款跨国小组合作的，以快速迭代为目标设计的塔防游戏小品，团队成员来自中国，美国，印度，伊朗。开发周期1周，净开发时长约30小时</p>
+							<p>爆裂瓜瓜是一款跨国小组合作的，以快速迭代为设计目标的塔防游戏小品。团队成员分布于中国，美国，印度，伊朗。开发周期1周，净开发时长约30小时</p>
 							<ul>
 								<li>领导团队进行了多轮Brainstorm</li>
 								<li>主导确认了游戏的美术风格</li>
@@ -475,6 +498,14 @@
 								<a target="_blank" href="https://github.com/voltr0x/MelonSmash"><p class="img__description center"><br>点击查看游戏代码(GitHub)</p></a>
 							</div>
 							<br>
+
+							<p>游戏规则</p>
+							<ul>
+								<li>为了保卫小镇南瓜大赛的参赛大南瓜，农夫不惜动用他的其他瓜们来防御虫子们</li>
+								<li>用于投掷的瓜在指定区域长大，农夫需要亲自捡起瓜来攻击虫子</li>
+								<li>农夫拥有蓄力条，每当蓄力条满时，农夫可以亲自踢飞一条虫子</li>
+								<li>当有三只虫子冲破防御，农夫的大南瓜就被咬坏，无法参赛了</li>
+							</ul>
 						</div>
 					</div>
 				</div>
