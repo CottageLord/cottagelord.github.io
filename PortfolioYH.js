@@ -78,7 +78,6 @@ window.addEventListener('load', function () {
     
     var bodies = document.getElementsByClassName("bodyspace");
     var divs = document.getElementsByClassName("overviewdiv");
-
     for (var i = bodies.length - 1; i >= 0; i--) {
         bodies[i].addEventListener('mouseleave', function (evt) {
             this.parentNode.style.backgroundImage = "url(media/bg_default.png)";
@@ -100,6 +99,7 @@ window.addEventListener('load', function () {
             this.classList.remove('unfocused');
             this.classList.remove('hide');
             this.classList.add('focused');
+
             //document.getElementById('navidiv').classList.add('hide');
 
         });
@@ -136,14 +136,14 @@ window.addEventListener('load', function () {
         var thanksletter = document.getElementById('thanksletter');
         if (pctScrolled > 45 && pctScrolled <= 65) {
             whoami.style.color = "green";
-            whoami.innerHTML = "梦想家";
+            whoami.innerHTML = "实践者";
         }
         else if (pctScrolled <= 45) {
             whoami.style.color = "pink";
             whoami.innerHTML = "爱好者";
         } else if (pctScrolled > 65) {
             whoami.style.color = "yellow";
-            whoami.innerHTML = "实践者";
+            whoami.innerHTML = "梦想家";
             thanksletter.style.opacity = (pctScrolled - 65) / 40;
             //console.log(thanksletter.style.opacity);
         }
