@@ -56,31 +56,64 @@
 			</div>
 			<!-- code -->
 			<div class="tabcontent" id="code">
-				<div class="headerspace img__wrap intro_img"><p class="img__description center">移动鼠标至页面边缘以显示默认背景</p></div>
+				<div class="headerspace img__wrap"><p class="img__description center">移动鼠标至页面边缘以显示默认背景</p></div>
 				<div class="bodyspace">
 					<div class="column">
-						<div class="overviewdiv unfocused" id="dreamproj" associated-img="media/bg1_colored.png">
+						<div class="overviewdiv projectcontent unfocused" id="d3d11engine" associated-img="media/bg_d3dengine.png">
 							<div class="img__wrap intro_img">
-								<img src="media/game1.png" alt="陌生人的梦游戏截图" class="center overviewimg">
-								<a target="_blank" href="https://www.bilibili.com/video/BV1rX4y1w7Lt/"><p class="img__description center"><br>观看游戏预告片<br>(b站)</p></a>
+								<img src="media/bg_d3dengine.png" alt="引擎界面" class="center overviewimg">
+								<a target="_blank" href="https://github.com/CottageLord/DX11-3D-Game-Engine"><p class="img__description center"><br>查看完整项目代码<br>及历次更新的图文日志<br>(GitHub)</p></a>
 							</div>
-							<h2 class="center">Unity独立游戏<br>陌生人的梦</h2>
-							<p class="center">[2018.10~2018.11]</p>
+							<h2 class="center">C++/Direct3D<br>渲染引擎</h2>
+							<p class="center">[2021.9~2022.2]</p>
 							<p class="center">独立开发者</p>
 							<br>
-							<p>《陌生人的梦》是一款第三人称冒险解谜游戏，开发周期2周，净开发时长(包括查询资料和美术素材)约50小时。</p>
+							<p>该渲染引擎使用Direct3D11开发，以工程上的可复用性（高内聚），可移植性（低耦合），健壮性（详尽的异常处理），代码上的简洁性，系统自动化程度以及功能上的可扩展性（便于植入多线程，图形化UI等）为目标，实现了Resource Manager, Job System, Render Graph等现代引擎的常用系统。</p>
 							<br>
 
-							<div class="img__wrap intro_img">
-								<img src="media/game3.png" alt="开发界面" alt="陌生人的梦开发界面" class="center overviewimg">
-								<a target="_blank" href="https://github.com/Game-Development-UA/Other-s-Dream-by-Yang-Hu"><p class="img__description center"><br>完整项目代码<br>(GitHub)</p></a>
+							<div class="img__wrap body_img">
+								<img src="media/d3dengine1.png" alt="Cell Shading效果展示" class="center overviewimg">
+								<a target="_blank" href="https://www.youtube.com/watch?v=74ULjgIdN0E"><p class="img__description center"><br>使用此引擎完成的<br>Cell Shading演示视频（英语）<br>(Youtube)</p></a>
 							</div>
+							
+							<br>
+							<p>以下为简要版本历史，详细更新至日见<a target="_blank" href="https://github.com/CottageLord/DX11-3D-Game-Engine">GitHub</a>：</p><br>
+							<p>1. 2021-08 Win32视窗，IO和每个class的内置异常处理</p><br>
+							<p>2. 2021-09 Drawable（可绘制的目标，包含vertex，index数据）和Bindable（渲染管线内的组件，包含shaders和transform等）系统，通过多态管理数据，提供多样的接口以进行增删查改。</p><br>
+							<p>3. 2021-10 Bindable Pool系统，全局管理所有Bindable数据，为复用提供便利。开始使用Imgui生成UI。</p><br>
+							<p>4. 2021-11 Dynamic Vertex系统，根据输入的模型数据动态生成Vertex Layout（每个顶点包含哪些数据），并提供修改接口。该系统与Bindable Pool联动。开始使用Assimp导入模型。</p><br>
+							<p>5. 2021-12 Dynamic Constant系统，根据输入的材质判定所需的Shader，生成Layout并提供修改接口。该系统与Bindable Pool联动。开始使用DirectXTex导入材质。</p><br>
+							<p>6. 2022-01 Job系统和Multi-Pass渲染，通过不同模型子节点材质需求不同，自动录入对应Job，并由Job系统归纳入不同Pass。</p><br>
+							<p>7. 2022-02 Render Graph系统，通过有向无环图结构，表明不同Pass之间的依赖与先后关系。保证了仅用三个函数Model::LinkTechniques()，Model::Submit()和RenderGraph::Execute()即可自动完成渲染的简洁流程。</p>
+							<br>
+							<div class="img__wrap body_img">
+								<img src="media/d3dengine2.jpg" alt="开发笔记示例" class="center overviewimg">
+								<img src="media/bg_d3dengine.png" alt="引擎界面" class="center overviewimg">
+								<a target="_blank" href="https://github.com/CottageLord/DX11-3D-Game-Engine"><p class="img__description center"><br>查看完整项目代码<br>及历次更新的图文日志<br>(GitHub)</p></a>
+							</div>
+							<br>
+						</div>
+						<div class="overviewdiv projectcontent unfocused" id="junglekasino" associated-img="media/bg_JungleKasino.png">
+							<div class="img__wrap intro_img">
+								<img src="media/JungleKasino.gif" alt="游玩演示" class="center overviewimg">
+								
+							</div>
+							<h2 class="center">Unity2D游戏<br>丛林秘境（开发中）</h2>
+							<p class="center">[2021.11~]</p>
+							<p class="center">独立开发者</p>
+							<br>
+							<p>《丛林秘境》是一款俯视角2D射击游戏，</p>
+							<br>
+
+							<video class="center overviewimg" controls>
+							    <source src="media/videos/Jungle Kasino Trailer.MOV" type="video/mp4">
+							</video>
 							
 							<br>
 							<p>游戏简介：在一个奇幻梦里，你听到一个陌生的声音向你求助——"请帮我找回我的身体"。当你收集齐他的骸骨后。。。</p>
 
 							<br>
-							<div class="img__wrap intro_img">
+							<div class="img__wrap body_img">
 								<img src="media/game2.png" alt="陌生人的梦游戏截图" class="center overviewimg">
 								<a target="_blank" href="https://www.bilibili.com/video/BV1iV411W766/"><p class="img__description center"><br>观看游戏流程<br>(b站)</p></a>
 							</div>
@@ -92,10 +125,10 @@
 						</div>
 					</div>
 					<div class="column">
-						<div class="overviewdiv unfocused" id="engineproj" associated-img="media/bg2_colored.png">
+						<div class="overviewdiv projectcontent unfocused" id="engineproj" associated-img="media/bg2_colored.png">
 							<div class="img__wrap intro_img">
 								<img src="media/dungeon.png" alt="地牢引擎截图" class="center overviewimg">
-								<a target="_blank" href="media/bg2_colored.png"><p class="img__description center"><br>查看背景原图</p></a>
+								<a target="_blank" href="https://cottagelord.github.io/CS5850_Final_project_MoYuGamers/webpage/"><p class="img__description center"><br>查看完整文档，代码，可玩版本<br>请点击打开课程展示页</p></a>
 							</div>
 							<h2 class="center">C++ 2D游戏引擎</h2>
 							<p class="center">[2021.1~2021.6]</p>
@@ -103,7 +136,7 @@
 							<br>
 							<p>该项目是“游戏引擎架构”课程的结课作业，应用了现代引擎常用的帧数稳定器，Component/Game Object模式，客制化的资源管理器。支持脚本编辑和数值热修。</p>
 							<br>
-							<div class="img__wrap intro_img">
+							<div class="img__wrap body_img">
 								<img src="media/dungeonweb.png" alt="作业展示页截图" class="center overviewimg">
 								<a target="_blank" href="https://cottagelord.github.io/CS5850_Final_project_MoYuGamers/webpage/"><p class="img__description center"><br>查看完整文档，代码，可玩版本<br>请点击打开课程展示页</p></a>
 							</div>
@@ -133,11 +166,7 @@
 							<p class="center">具体描述见<br><a target="_blank" href="https://cottagelord.github.io/CS5850_Final_project_MoYuGamers/webpage/">课程展示页面</a></p>
 							<br>
 						</div>
-					</div>
-					<div class="column">
-						
-						
-						<div class="overviewdiv unfocused" id="2dgame" associated-img="media/bg_2dgame.png">
+						<div class="overviewdiv projectcontent unfocused" id="2dgame" associated-img="media/bg_2dgame.png">
 							<div class="img__wrap intro_img">
 								<img src="media/2dgamelogo.png" alt="2d游戏小品" class="center overviewimg">
 								<a target="_blank" href="media/bg_2dgame.png"><p class="img__description center"><br>查看背景原图</p></a>
@@ -151,7 +180,60 @@
 							<a target="_blank" href="https://github.com/CottageLord/ISTA451-level-environment" class="center"><p>查看全部代码，美术资源与可玩版本</p></a>
 							<br>
 						</div>
-						<div class="overviewdiv unfocused" id="hardwareproj"  associated-img="media/bg_303.jpg">
+					</div>
+					<div class="column">
+						<div class="overviewdiv projectcontent unfocused" id="dreamproj" associated-img="media/bg1_colored.png">
+							<div class="img__wrap intro_img">
+								<img src="media/game1.png" alt="陌生人的梦游戏截图" class="center overviewimg">
+								<a target="_blank" href="https://www.bilibili.com/video/BV1rX4y1w7Lt/"><p class="img__description center"><br>观看游戏预告片<br>(b站)</p></a>
+							</div>
+							<h2 class="center">Unity独立游戏<br>陌生人的梦</h2>
+							<p class="center">[2018.10~2018.11]</p>
+							<p class="center">独立开发者</p>
+							<br>
+							<p>《陌生人的梦》是一款第三人称冒险解谜游戏，开发周期2周，净开发时长(包括查询资料和美术素材)约50小时。</p>
+							<br>
+
+							<div class="img__wrap body_img">
+								<img src="media/game3.png" alt="开发界面" alt="陌生人的梦开发界面" class="center overviewimg">
+								<a target="_blank" href="https://github.com/Game-Development-UA/Other-s-Dream-by-Yang-Hu"><p class="img__description center"><br>完整项目代码<br>(GitHub)</p></a>
+							</div>
+							
+							<br>
+							<p>游戏简介：在一个奇幻梦里，你听到一个陌生的声音向你求助——"请帮我找回我的身体"。当你收集齐他的骸骨后。。。</p>
+
+							<br>
+							<div class="img__wrap body_img">
+								<img src="media/game2.png" alt="陌生人的梦游戏截图" class="center overviewimg">
+								<a target="_blank" href="https://www.bilibili.com/video/BV1iV411W766/"><p class="img__description center"><br>观看游戏流程<br>(b站)</p></a>
+							</div>
+
+							<a target="_blank" href="https://pan.baidu.com/s/1mQXuduqMa_Jb0s0tMSX_gg"><p class="center" color="green">获取可玩版本<br>[提取码amao]</p></a>
+							<br>
+							<p>鼠标悬浮剧透：</p>
+							<p class="secrettext">拼凑起守梦人的骸骨后，你代替他成为了新的守梦人。在下一个流浪者误入这个梦境前，你将永远沉睡。。。</p>
+						</div>
+						<div class="overviewdiv projectcontent unfocused" id="algoproj" associated-img="media/bg_algo.jpg">
+							<div class="img__wrap intro_img">
+								<img src="media/algologo.png" alt="算法可视化" class="center overviewimg">
+								<a target="_blank" href="media/bg_algo.jpg"><p class="img__description center"><br>查看背景原图</p></a>
+							</div>
+							<h2 class="center">算法及其可视化<br></h2>
+							<p class="center">[2018.8~2018.12]</p>
+							<p class="center">独立完成的课程作业<br>(均含全部加分项)</p>
+							<ul>
+								<li>AVL与红黑树</li>
+								<li>Dijkstra</li>
+								<li>图灵机</li>
+								<li>快排与堆排序</li>
+							</ul>
+							<a target="_blank" href="https://github.com/CottageLord/CS_Courses/tree/main/CS345" class="center"><p>查看全部代码与可视化图片</p></a>
+							<br>
+						</div>
+					</div>
+
+					<div class="column">
+						<div class="overviewdiv projectcontent unfocused" id="hardwareproj"  associated-img="media/bg_303.jpg">
 							<div class="img__wrap intro_img">
 								<img src="media/303logo.png" alt="Arduino编程" class="center overviewimg">
 								<a target="_blank" href="media/bg_303.jpg"><p class="img__description center"><br>查看背景原图</p></a>
@@ -169,27 +251,7 @@
 							<a target="_blank" href="https://github.com/CottageLord/CS_Courses/tree/main/ISTA303" class="center"><p>查看全部项目报告</p></a>
 							<br>
 						</div>
-					</div>
-
-					<div class="column">
-						<div class="overviewdiv unfocused" id="algoproj" associated-img="media/bg_algo.jpg">
-							<div class="img__wrap intro_img">
-								<img src="media/algologo.png" alt="算法可视化" class="center overviewimg">
-								<a target="_blank" href="media/bg_algo.jpg"><p class="img__description center"><br>查看背景原图</p></a>
-							</div>
-							<h2 class="center">算法及其可视化<br></h2>
-							<p class="center">[2018.8~2018.12]</p>
-							<p class="center">独立完成的课程作业<br>(均含全部加分项)</p>
-							<ul>
-								<li>AVL与红黑树</li>
-								<li>Dijkstra</li>
-								<li>图灵机</li>
-								<li>快排与堆排序</li>
-							</ul>
-							<a target="_blank" href="https://github.com/CottageLord/CS_Courses/tree/main/CS345" class="center"><p>查看全部代码与可视化图片</p></a>
-							<br>
-						</div>
-						<div class="overviewdiv unfocused" id="opsysproj" associated-img="media/bg_usloss.jpg">
+						<div class="overviewdiv projectcontent unfocused" id="opsysproj" associated-img="media/bg_usloss.jpg">
 							<div class="img__wrap intro_img">
 								<img src="media/uslosslogo.png" alt="计算机操作系统" class="center overviewimg">
 								<a target="_blank" href="media/bg_usloss.jpg"><p class="img__description center"><br>查看背景原图</p></a>
@@ -223,7 +285,7 @@
 			</div>
 			<!-- note -->
 			<div class="tabcontent" id="note">
-				<div class="headerspace img__wrap intro_img"><p class="img__description center">移动鼠标至页面边缘以显示默认背景</p></div>
+				<div class="headerspace img__wrap"><p class="img__description center">移动鼠标至页面边缘以显示默认背景</p></div>
 				<div class="bodyspace">
 					<div class="column">
 						<div class="overviewdiv notecontent unfocused" id="gamesnote" alt="图形学入门" associated-img="media/notes/games101.jpg">
@@ -417,7 +479,7 @@
 			</div>
 			<!-- design -->
 			<div class="tabcontent" id="design">
-				<div class="headerspace img__wrap intro_img"><p class="img__description center">移动鼠标至页面边缘以显示默认背景</p></div>
+				<div class="headerspace img__wrap"><p class="img__description center">移动鼠标至页面边缘以显示默认背景</p></div>
 				<div class="bodyspace">
 					<div class="column">
 						<div class="overviewdiv unfocused" id="climber" alt="桌游攀登者" associated-img="media/designs/bg_climber.jpg">
@@ -473,12 +535,12 @@
 							<img src="media/designs/statue1.png" alt="文字冒险游戏" class="center overviewimg">
 							<p>部分特殊活动：</p>
 
-							<div class="img__wrap intro_img">
+							<div class="img__wrap body_img">
 								<img src="media/designs/fall.png" alt="下100层" class="center overviewimg">
 								<a target="_blank" href="media/designs/fall.png"><p class="img__description center"><br>是勇士就下一百层：玩家自由落体避开障碍（有预警），无伤落入坑底者通过。<br>奖品：家园服预设别墅一套。</p></a>
 							</div>
 							<br>
-							<div class="img__wrap intro_img">
+							<div class="img__wrap body_img">
 								<img src="media/designs/race.png" alt="竞速大赛" class="center overviewimg">
 								<a target="_blank" href="media/designs/race.png"><p class="img__description center"><br>独角兽竞速大赛：乘坐独角兽竞速。奖品：家园服黄金地段土地一块。</p></a>
 							</div>
@@ -510,7 +572,7 @@
 					</div>
 					<div class="column">
 						<div class="overviewdiv unfocused" id="melonsmash" associated-img="media/designs/bg_melon.jpg">
-							<div class="img__wrap intro_img">
+							<div class="img__wrap intro_img ">
 								<img src="media/designs/bg_melon.png" alt="爆裂瓜瓜" class="center overviewimg">
 								<a target="_blank" href="media/designs/melonlogo.png"><p class="img__description center"><br>点击查看游戏截图</p></a>
 							</div>
@@ -523,7 +585,7 @@
 								<li>主导确认了游戏的美术风格</li>
 								<li>领导编程团队进行了多轮快速开发，团队成员来自中国和印度</li>
 							</ul>
-							<div class="img__wrap intro_img">
+							<div class="img__wrap body_img">
 								<img src="media/designs/melonlogo.png" alt="爆裂瓜瓜开发界面" class="center overviewimg">
 								<a target="_blank" href="https://github.com/voltr0x/MelonSmash"><p class="img__description center"><br>点击查看游戏代码(GitHub)</p></a>
 							</div>

@@ -52,7 +52,7 @@ window.addEventListener('load', function () {
 
     var content = document.getElementsByClassName("tabcontent");
 
-    // Set only first content to shown
+    // Set only first content to show
     for (var i = 1; i < content.length; i++) {
 	   content[i].classList.add('unselected');
     }
@@ -77,42 +77,41 @@ window.addEventListener('load', function () {
 
     
     var bodies = document.getElementsByClassName("bodyspace");
-    var divs = document.getElementsByClassName("overviewdiv");
+    var divs = document.getElementsByClassName("intro_img");
     for (var i = bodies.length - 1; i >= 0; i--) {
         bodies[i].addEventListener('mouseleave', function (evt) {
             this.parentNode.style.backgroundImage = "url(media/bg_default.png)";
             for (var j = divs.length - 1; j >= 0; j--) {
-                divs[j].classList.remove('hide');
-                divs[j].classList.add('unfocused');
+                divs[j].parentNode.classList.remove('hide');
+                divs[j].parentNode.classList.add('unfocused');
             }
         });
     }
 
     for (i = 0; i < divs.length; i++) {
         divs[i].addEventListener('mouseover', function (evt) {
-            this.parentNode.parentNode.parentNode.style.backgroundImage = "url(" + this.getAttribute("associated-img") + ")";
+            this.parentNode.parentNode.parentNode.parentNode.style.backgroundImage = "url(" + this.parentNode.getAttribute("associated-img") + ")";
             for (var j = divs.length - 1; j >= 0; j--) {
-                divs[j].classList.remove('focused');
-                divs[j].classList.remove('unfocused');
-                divs[j].classList.add('hide');
+                divs[j].parentNode.classList.remove('focused');
+                divs[j].parentNode.classList.remove('unfocused');
+                divs[j].parentNode.classList.add('hide');
             }
-            this.classList.remove('unfocused');
-            this.classList.remove('hide');
-            this.classList.add('focused');
+            this.parentNode.classList.remove('unfocused');
+            this.parentNode.classList.remove('hide');
+            this.parentNode.classList.add('focused');
 
             //document.getElementById('navidiv').classList.add('hide');
 
         });
         divs[i].addEventListener('mouseleave', function (evt) {
             for (var j = divs.length - 1; j >= 0; j--) {
-                divs[j].classList.remove('hide');
-                divs[j].classList.remove('focused');
-                divs[j].classList.add('unfocused');
+                divs[j].parentNode.classList.remove('hide');
+                divs[j].parentNode.classList.remove('focused');
+                divs[j].parentNode.classList.add('unfocused');
             }
             //document.getElementById('navidiv').classList.remove('hide');
         });
     }
-
 
     // functions to perform gradual change animation
     function getDocHeight() {
