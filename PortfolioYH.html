@@ -78,7 +78,8 @@
 							
 							<br>
 							<p>以下为简要版本历史，详细更新至日见<a target="_blank" href="https://github.com/CottageLord/DX11-3D-Game-Engine">GitHub</a>：</p><br>
-							<p>1. 2021-08 Win32视窗，IO和每个class的内置异常处理</p><br>
+							<p>0. 2021-08 Win32视窗，IO和每个class的内置异常处理。</p><br>
+							<p>1. 2021-08 基础的Phong Shading。</p><br>
 							<p>2. 2021-09 Drawable（可绘制的目标，包含vertex，index数据）和Bindable（渲染管线内的组件，包含shaders和transform等）系统，通过多态管理数据，提供多样的接口以进行增删查改。</p><br>
 							<p>3. 2021-10 Bindable Pool系统，全局管理所有Bindable数据，为复用提供便利。开始使用Imgui生成UI。</p><br>
 							<p>4. 2021-11 Dynamic Vertex系统，根据输入的模型数据动态生成Vertex Layout（每个顶点包含哪些数据），并提供修改接口。该系统与Bindable Pool联动。开始使用Assimp导入模型。</p><br>
@@ -102,26 +103,18 @@
 							<p class="center">[2021.11~]</p>
 							<p class="center">独立开发者</p>
 							<br>
-							<p>《丛林秘境》是一款俯视角2D射击游戏，</p>
+							<p>《丛林秘境》是一款俯视角2D射击游戏，使用Unity开发。独立完成了游戏核心机制（顶部资源管理条+使用物品控制地图随机生成）的设计，实现了对应游戏逻辑和UI。</p>
 							<br>
-
 							<video class="center overviewimg" controls>
 							    <source src="media/videos/Jungle Kasino Trailer.MOV" type="video/mp4">
 							</video>
-							
 							<br>
-							<p>游戏简介：在一个奇幻梦里，你听到一个陌生的声音向你求助——"请帮我找回我的身体"。当你收集齐他的骸骨后。。。</p>
-
+							<p>游戏的设计初衷是为了探究玩家体验的两个课题：</p>
 							<br>
-							<div class="img__wrap body_img">
-								<img src="media/game2.png" alt="陌生人的梦游戏截图" class="center overviewimg">
-								<a target="_blank" href="https://www.bilibili.com/video/BV1iV411W766/"><p class="img__description center"><br>观看游戏流程<br>(b站)</p></a>
-							</div>
-
-							<a target="_blank" href="https://pan.baidu.com/s/1mQXuduqMa_Jb0s0tMSX_gg"><p class="center" color="green">获取可玩版本<br>[提取码amao]</p></a>
+							<p>1. 在随机事件数学期望一致的情况下，稳定补偿和超级幸运时刻对玩家体验的积极与消极影响。</p>
 							<br>
-							<p>鼠标悬浮剧透：</p>
-							<p class="secrettext">拼凑起守梦人的骸骨后，你代替他成为了新的守梦人。在下一个流浪者误入这个梦境前，你将永远沉睡。。。</p>
+							<p>2. 在地图视觉风格一致的情况下，允许玩家间接控制地图生成（Adaptive Generation，更多自主性，但是更少严谨设计）的机制，与直接游玩提前设计好的地图（更少自主性，更多严谨设计）相比，在制造不同类别的快乐上有什么具体不同，整体上是否有优劣（该课题为硕士论文主题，对应build仍在开发中）。</p>
+							<br>
 						</div>
 					</div>
 					<div class="column">
@@ -161,7 +154,7 @@
 							    <source src="media/videos/enemyai.mp4" type="video/mp4">
 							</video>
 							<br>
-							<p>参数化的Animator</p>
+							<p>参数化、脚本化的Sprite Animator</p>
 							<br>
 							<p class="center">具体描述见<br><a target="_blank" href="https://cottagelord.github.io/CS5850_Final_project_MoYuGamers/webpage/">课程展示页面</a></p>
 							<br>
@@ -211,7 +204,7 @@
 							<a target="_blank" href="https://pan.baidu.com/s/1mQXuduqMa_Jb0s0tMSX_gg"><p class="center" color="green">获取可玩版本<br>[提取码amao]</p></a>
 							<br>
 							<p>鼠标悬浮剧透：</p>
-							<p class="secrettext">拼凑起守梦人的骸骨后，你代替他成为了新的守梦人。在下一个流浪者误入这个梦境前，你将永远沉睡。。。</p>
+							<p class="secrettext">拼凑起守梦人的骸骨后，你代替他成为了新的守梦人。在下一个流浪者误入这个梦境前，你将永远在梦魇中游荡。。。</p>
 						</div>
 						<div class="overviewdiv projectcontent unfocused" id="algoproj" associated-img="media/bg_algo.jpg">
 							<div class="img__wrap intro_img">
@@ -258,7 +251,7 @@
 							</div>
 							<h2 class="center">基于USLOSS的<br>计算机操作系统模拟<br></h2>
 							<p class="center">[2019.8~2019.12]</p>
-							<p class="center">主程</p>
+							<p class="center">独立完成的课程作业</p>
 							<br>
 							<p>使用USLOSS库（包含了模拟操作系统基础操作的库，如Process Init，Disk_Request，PageTable_Get等）模拟了操作系统常见的运行逻辑。</p>
 							<br>
