@@ -302,7 +302,23 @@ fieldset{
     padding: 14px 0px;
     text-decoration: none;
     background-color: #333;
-    width: 20%;
+    width: 16.6%;
+}
+
+.changeVer{
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 0px;
+    text-decoration: none;
+    background-color: #333;
+    width: 16.6%;
+}
+
+li.changeVer:hover {
+    background-color: #666;
+    cursor: pointer; 
 }
 
 .headerspace {

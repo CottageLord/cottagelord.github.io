@@ -133,6 +133,15 @@ window.addEventListener('load', function () {
         //console.log(pctScrolled + '% scrolled');
         var whoami = document.getElementById('whoami');
         var thanksletter = document.getElementById('thanksletter');
+        
+        if(whoami.innerHTML == "Game Lover"){
+            if (pctScrolled > 65) {
+            thanksletter.style.opacity = (pctScrolled - 65) / 40;
+            //console.log(thanksletter.style.opacity);
+            }
+            return;
+        }
+
         if (pctScrolled > 45 && pctScrolled <= 65) {
             whoami.style.color = "green";
             whoami.innerHTML = "实践者";
