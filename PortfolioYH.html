@@ -60,26 +60,26 @@
 						<div class="overviewdiv projectcontent unfocused" id="d3d11engine" associated-img="media/bg_d3dengine.png">
 							<div class="img__wrap intro_img">
 								<img src="media/bg_d3dengine.png" alt="引擎界面" class="center overviewimg">
-								<a target="_blank" href="https://github.com/CottageLord/DX11-3D-Game-Engine"><p class="img__description center"><br>查看完整项目代码<br>及历次更新的图文日志<br>(GitHub)</p></a>
+								<a target="_blank" href="https://github.com/CottageLord/DX11-3D-Game-Engine"><p class="img__description center"><br>Clike to view github repo<br> with detailed version history and documentation<br>(GitHub)</p></a>
 							</div>
-							<h2 class="center">C++/DirectX11<br>3D渲染引擎</h2>
+							<h2 class="center">C++/DirectX11<br> 3D renderer engine</h2>
 							<p class="center">[2021.9~2022.4]</p>
-							<p class="center">独立开发者</p>
+							<p class="center">Independent Project</p>
 							<br>
-							<p>该渲染引擎使用DirectX11开发，实现了Resource Manager, Job System, Render Graph等现代引擎常用的系统。通过运用C++特性，降低了代码的复杂度和耦合度；通过详尽的异常处理，降低了维护难度；在代码设计上，尽力保障了代码的高内聚特性，以便于日后扩展，如在Job System中植入多线程，在Render Graph中加入更多的后处理Pass等。编写了各类shaders，实现了Phong Shading，Cel Shading，软阴影等效果。使用ImGui搭建了UI系统。</p>
+							<p>The engine is built on DirectX 11 and Win32 interfaces. It integrated modern game engine subsystems, including Resource Manager, Job System and Render Graph. The engineering of this project emphasized on low coupling and high extensibility. All functional modules were built with separate exception handlers. The engine also comes with various shaders that support Phong Shading, Cel Shading and Percentage Close Soft Shadows. The UI was built with ImGui.</p>
 							<br>
 							<div class="img__wrap body_img">
 								<img src="media/d3dengine1.png" alt="Cell Shading效果展示" class="center overviewimg">
-								<a target="_blank" href="https://www.youtube.com/watch?v=74ULjgIdN0E"><p class="img__description center"><br>使用此引擎完成的<br>Cel Shading演示视频（英语）<br>(Youtube)</p></a>
+								<a target="_blank" href="https://www.youtube.com/watch?v=74ULjgIdN0E"><p class="img__description center"><br>A Cel Shading<br> Demo Video<br>(Youtube)</p></a>
 							</div>
 							
 							<br>
-							<p>以下为简要版本历史，详细更新至日见<a target="_blank" href="https://github.com/CottageLord/DX11-3D-Game-Engine">GitHub</a>：</p><br>
-							<p>0. 2021-08 Win32视窗，IO和每个class的内置异常处理。</p><br>
-							<p>1. 2021-08 基础的Phong Shading。</p><br>
-							<p>2. 2021-09 Drawable（可绘制的目标，包含vertex，index数据）和Bindable（渲染管线内的组件，包含shaders和transform等）系统，通过多态管理数据，提供多样的接口以进行增删查改。</p><br>
-							<p>3. 2021-10 Bindable Pool系统，全局管理所有Bindable数据，为复用提供便利。开始使用Imgui生成UI。</p><br>
-							<p>4. 2021-11 Dynamic Vertex系统，根据输入的模型数据动态生成Vertex Layout（每个顶点包含哪些数据），并提供修改接口。该系统与Bindable Pool联动。开始使用Assimp导入模型。</p><br>
+							<p>A brief version history is listed below. For complete descriptions, please go to my <a target="_blank" href="https://github.com/CottageLord/DX11-3D-Game-Engine">GitHub repository</a>：</p><br>
+							<p>0. 2021-08 Win32 Window, mouse/keyboard IO and basic exception handling.</p><br>
+							<p>1. 2021-08 Basic Phong Shading.</p><br>
+							<p>2. 2021-09 Drawable (An object containing vertex, index and other model related data) and Bindable (pipeline configurations including shaders and transforms) systems that allowed the system to automatic assembly the rendering process.</p><br>
+							<p>3. 2021-10 Bindable Pool system - manage all bindables data to avoid duplicated data. Started to use ImGui.</p><br>
+							<p>4. 2021-11 Dynamic Vertex System - Dynamically sets render pipeline according to the input model data/textures. Register respective vertex data in the Bindable Pool system. Started using AssImp to import models.</p><br>
 							<p>5. 2021-12 Dynamic Constant系统，根据输入的材质判定所需的Shader，生成Layout并提供修改接口。该系统与Bindable Pool联动。开始使用DirectXTex导入材质。</p><br>
 							<p>6. 2022-01 Job系统和Multi-Pass渲染，通过不同模型子节点材质需求不同，自动录入对应Job，并由Job系统归纳入不同Pass。</p><br>
 							<p>7. 2022-02 Render Graph系统，通过有向无环图结构，表明不同Pass之间的依赖与先后关系。保证了仅用三个函数Model::LinkTechniques()，Model::Submit()和RenderGraph::Execute()即可自动完成渲染的简洁流程。</p>
