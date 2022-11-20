@@ -59,17 +59,17 @@
 					<div class="column">
 						<div class="overviewdiv projectcontent unfocused" id="d3d11engine" associated-img="media/bg_d3dengine.png">
 							<div class="img__wrap intro_img">
-								<img src="media/bg_d3dengine.png" alt="引擎界面" class="center overviewimg">
+								<img src="media/bg_d3dengine.png" alt="Engine interface" class="center overviewimg">
 								<a target="_blank" href="https://github.com/CottageLord/DX11-3D-Game-Engine"><p class="img__description center"><br>Clike to view github repo<br> with detailed version history and documentation<br>(GitHub)</p></a>
 							</div>
 							<h2 class="center">C++/DirectX11<br> 3D renderer engine</h2>
 							<p class="center">[2021.9~2022.4]</p>
-							<p class="center">Independent Project</p>
+							<p class="center">Independent developer</p>
 							<br>
 							<p>The engine is built on DirectX 11 and Win32 interfaces. It integrated modern game engine subsystems, including Resource Manager, Job System and Render Graph. The engineering of this project emphasized on low coupling and high extensibility. All functional modules were built with separate exception handlers. The engine also comes with various shaders that support Phong Shading, Cel Shading and Percentage Close Soft Shadows. The UI was built with ImGui.</p>
 							<br>
 							<div class="img__wrap body_img">
-								<img src="media/d3dengine1.png" alt="Cell Shading效果展示" class="center overviewimg">
+								<img src="media/d3dengine1.png" alt="Cell Shading" class="center overviewimg">
 								<a target="_blank" href="https://www.youtube.com/watch?v=74ULjgIdN0E"><p class="img__description center"><br>A Cel Shading<br> Demo Video<br>(Youtube)</p></a>
 							</div>
 							
@@ -79,63 +79,69 @@
 							<p>1. 2021-08 Basic Phong Shading.</p><br>
 							<p>2. 2021-09 Drawable (An object containing vertex, index and other model related data) and Bindable (pipeline configurations including shaders and transforms) systems that allowed the system to automatic assembly the rendering process.</p><br>
 							<p>3. 2021-10 Bindable Pool system - manage all bindables data to avoid duplicated data. Started to use ImGui.</p><br>
-							<p>4. 2021-11 Dynamic Vertex System - Dynamically sets render pipeline according to the input model data/textures. Register respective vertex data in the Bindable Pool system. Started using AssImp to import models.</p><br>
-							<p>5. 2021-12 Dynamic Constant系统，根据输入的材质判定所需的Shader，生成Layout并提供修改接口。该系统与Bindable Pool联动。开始使用DirectXTex导入材质。</p><br>
-							<p>6. 2022-01 Job系统和Multi-Pass渲染，通过不同模型子节点材质需求不同，自动录入对应Job，并由Job系统归纳入不同Pass。</p><br>
-							<p>7. 2022-02 Render Graph系统，通过有向无环图结构，表明不同Pass之间的依赖与先后关系。保证了仅用三个函数Model::LinkTechniques()，Model::Submit()和RenderGraph::Execute()即可自动完成渲染的简洁流程。</p>
+							<p>4. 2021-11 Dynamic Vertex System - Dynamically sets vertex data layout according to the input model data/textures. Register respective vertex data in the Bindable Pool system. Started using AssImp to import models.</p><br>
+							<p>5. 2021-12 Dynamic Constant System - sets up the render pipeline and shader combinations according to the vertext layout. The dynamic constants are also registered in the Bindable Pool. Started to use DirectXTex to import textures.</p><br>
+							<p>6. 2022-01 Job System and Multi-Pass rendering - registers jobs according to loaded materials and classify them into respective passes.</p><br>
+							<p>7. 2022-02 Render Graph System - a Directed Acyclic Graph structure that stores the dependency between passes. Once the materials and pass dependencies are specified, materials can be automatically rendered in correct orders. </p>
 							<br>
 							<div class="img__wrap body_img">
-								<img src="media/d3dengine2.jpg" alt="开发笔记示例" class="center overviewimg">
-								<img src="media/bg_d3dengine.png" alt="引擎界面" class="center overviewimg">
-								<a target="_blank" href="https://github.com/CottageLord/DX11-3D-Game-Engine"><p class="img__description center"><br>查看完整项目代码<br>及历次更新的图文日志<br>(GitHub)</p></a>
+								<img src="media/d3dengine2.jpg" alt="Development note example" class="center overviewimg">
+								<img src="media/bg_d3dengine.png" alt="Engine interface" class="center overviewimg">
+								<a target="_blank" href="https://github.com/CottageLord/DX11-3D-Game-Engine"><p class="img__description center"><br>Browse all code, notes<br>and complete update logs<br>(GitHub)</p></a>
 							</div>
 							<br>
 						</div>
 						<div class="overviewdiv projectcontent unfocused" id="hardwareproj"  associated-img="media/bg_303.jpg">
 							<div class="img__wrap intro_img">
-								<img src="media/303logo.png" alt="Arduino编程" class="center overviewimg">
+								<img src="media/303logo.png" alt="Arduino projects" class="center overviewimg">
 								<a target="_blank" href="media/bg_303.jpg"><p class="img__description center"><br>Check out the background image</p></a>
 							</div>
-							<h2 class="center">Arduino项目<br></h2>
+							<h2 class="center">Arduino Projects<br></h2>
 							<p class="center">[2018.8~2018.12]</p>
-							<p class="center">主程兼美术(建模,绘制手册)</p>
+							<p class="center">Designer, programmer and 3D modeler</p>
 							<ul>
-								<li>可视化声纳感应器</li>
-								<li>应用反向运动学的多功能机械臂</li>
-								<li>彩虹糖分类器（后被选为实验室优秀作品）</li>
+								<li>A sonar with a graphic user interface</li>
+								<li>An inverse-kinematic robot arm with chess game GUI</li>
+								<li>A skittle sorter (picked by instructor as outstanding project)</li>
 							</ul>
-							<p>使用3D打印与激光切割技术，设计并制作了全部容器与支撑物。使用Arduino单片机，制作，调试了设备的交互逻辑，运行流程等。</p>
+							<p>With 3D printing and razor cutting, designed and made all containers and supporters. <p>
 							<br>
-							<a target="_blank" href="https://github.com/CottageLord/CS_Courses/tree/main/ISTA303" class="center"><p>查看全部项目报告</p></a>
+							<p>With Arduino and Processing, designed and made the complete interaction process and logic.</p>
+							<br>
+							<a target="_blank" href="https://github.com/CottageLord/CS_Courses/tree/main/ISTA303" class="center"><p>See all projects reports</p></a>
 							<br>
 						</div>
 					</div>
 					<div class="column">
 						<div class="overviewdiv projectcontent unfocused" id="engineproj" associated-img="media/bg2_colored.png">
 							<div class="img__wrap intro_img">
-								<img src="media/dungeon.png" alt="地牢引擎截图" class="center overviewimg">
-								<a target="_blank" href="https://cottagelord.github.io/CS5850_Final_project_MoYuGamers/webpage/"><p class="img__description center"><br>查看完整文档，代码，可玩版本<br>请点击打开课程展示页</p></a>
+								<img src="media/dungeon.png" alt="Dungeon game engine" class="center overviewimg">
+								<a target="_blank" href="https://cottagelord.github.io/CS5850_Final_project_MoYuGamers/webpage/"><p class="img__description center"><br>For full documentation, demonstration and playable build<br>Please visit the assignment homepage</p></a>
 							</div>
-							<h2 class="center">C++ 2D游戏引擎</h2>
+							<h2 class="center">C++ 2D dungeon game engine</h2>
 							<p class="center">[2021.1~2021.6]</p>
-							<p class="center">主程</p>
+							<p class="center">Lead programmer</p>
 							<br>
-							<p>该项目是“游戏引擎架构”课程的结课作业，应用了现代引擎常用的帧数稳定器，Component/Game Object模式，客制化的资源管理器。支持脚本编辑和数值热修。</p>
+							<p>This project was the final group project of the "Building Game Engine" class. It implemented many systems that modern game engine have，including Components/Game Objects structure, sprite animator and resource manager. It also supports script language and hotfix.</p>
 							<br>
 							<div class="img__wrap body_img">
-								<img src="media/dungeonweb.png" alt="作业展示页截图" class="center overviewimg">
-								<a target="_blank" href="https://cottagelord.github.io/CS5850_Final_project_MoYuGamers/webpage/"><p class="img__description center"><br>查看完整文档，代码，可玩版本<br>请点击打开课程展示页</p></a>
+								<img src="media/dungeonweb.png" alt="Assignment webpage" class="center overviewimg">
+								<a target="_blank" href="https://cottagelord.github.io/CS5850_Final_project_MoYuGamers/webpage/"><p class="img__description center"><br>For full documentation, demonstration and playable build<br>Please visit the assignment homepage</p></a>
 							</div>
-							<p>负责构建，维护，优化代码结构，主持定期的开发会议，并负责日常跟进成员进度。在引擎结构稳定后，独立制作了以下功能</p>
+							<p>Responsible for designing, building, optimizing code structure. </p>
 							<br>
-							<p>自动生成地图并绘制墙体</p>
+							<p>Responsible for hosting dev meetings and following up teammates' progresses. </p>
+							<br>
+							<p>Independently built the following systems:</p>
+							<br>
+							<p>Procedural dungeon map generator with auto-tiling</p>
 							<br>
 							<video class="center overviewimg" controls>
 							    <source src="media/videos/mapGen.mp4" type="video/mp4">
 							</video>
 							<br>
-							<p>有限状态的怪物AI模板</p>
-							<p>基于A*的自动寻路</p>
+							<p>Enemy AI with behavior tree.</p>
+							<p>A* pathfinding with raycast optimization.</p>
 							<br>
 							<video class="center overviewimg" controls>
 							    <source src="media/videos/pathfinding.mp4" type="video/mp4">
@@ -147,73 +153,75 @@
 							    <source src="media/videos/enemyai.mp4" type="video/mp4">
 							</video>
 							<br>
-							<p>参数化、脚本化的Sprite Animator</p>
+							<p>Sprite Animator system</p>
 							<br>
-							<p class="center">具体描述见<br><a target="_blank" href="https://cottagelord.github.io/CS5850_Final_project_MoYuGamers/webpage/">课程展示页面</a></p>
+							<p class="center">For more details, see <br><a target="_blank" href="https://cottagelord.github.io/CS5850_Final_project_MoYuGamers/webpage/">assignment homepage</a></p>
 							<br>
 						</div>
 						<div class="overviewdiv projectcontent unfocused" id="2dgame" associated-img="media/bg_2dgame.png">
 							<div class="img__wrap intro_img">
-								<img src="media/2dgamelogo.png" alt="2d游戏小品" class="center overviewimg">
+								<img src="media/2dgamelogo.png" alt="2d game demo" class="center overviewimg">
 								<a target="_blank" href="media/bg_2dgame.png"><p class="img__description center"><br>Check out the background image</p></a>
 							</div>
-							<h2 class="center">2D游戏小品<br></h2>
+							<h2 class="center">2D game demo<br></h2>
 							<p class="center">[2018.9]</p>
-							<p class="center">独立开发者</p>
+							<p class="center">Independent developer</p>
 							<ul>
-								<li>独立绘制并配置了全部美术/动画资源(除背景图片外)</li>
+								<li>Independently made all sprite resources.</li>
 							</ul>
-							<a target="_blank" href="https://github.com/CottageLord/ISTA451-level-environment" class="center"><p>查看全部代码，美术资源与可玩版本</p></a>
+							<a target="_blank" href="https://github.com/CottageLord/ISTA451-level-environment" class="center"><p>Code, art resources and playable build.</p></a>
 							<br>
 						</div>
 					</div>
 					<div class="column">
 						<div class="overviewdiv projectcontent unfocused" id="dreamproj" associated-img="media/bg1_colored.png">
 							<div class="img__wrap intro_img">
-								<img src="media/game1.png" alt="陌生人的梦游戏截图" class="center overviewimg">
-								<a target="_blank" href="https://www.bilibili.com/video/BV1rX4y1w7Lt/"><p class="img__description center"><br>观看游戏预告片<br>(b站)</p></a>
+								<img src="media/game1.png" alt="Screenshot" class="center overviewimg">
+								<a target="_blank" href="https://www.bilibili.com/video/BV1rX4y1w7Lt/"><p class="img__description center"><br>Watch game trailer<br>(Bilibili - Chinese)</p></a>
 							</div>
-							<h2 class="center">Unity3D游戏<br>陌生人的梦</h2>
+							<h2 class="center">Unity3D Game<br>A stranger's dream</h2>
 							<p class="center">[2018.10~2018.11]</p>
-							<p class="center">独立开发者</p>
+							<p class="center">Independent developer</p>
 							<br>
-							<p>《陌生人的梦》是一款第三人称冒险解谜游戏，开发周期2周，净开发时长(包括查询资料和美术素材)约50小时。</p>
+							<p>A stranger's dream is a third person role play puzzle game consisting of 4 levels. It was a assignment milestone for a game development course. The net developing hours is around 50.</p>
 							<br>
 
 							<div class="img__wrap body_img">
-								<img src="media/game3.png" alt="陌生人的梦开发界面" class="center overviewimg">
-								<a target="_blank" href="https://github.com/Game-Development-UA/Other-s-Dream-by-Yang-Hu"><p class="img__description center"><br>完整项目代码<br>(GitHub)</p></a>
+								<img src="media/game3.png" alt="Debveloping screenshot" class="center overviewimg">
+								<a target="_blank" href="https://github.com/Game-Development-UA/Other-s-Dream-by-Yang-Hu"><p class="img__description center"><br><(GitHub)</p></a>
 							</div>
 							
 							<br>
-							<p>游戏简介：在一个奇幻梦里，你听到一个陌生的声音向你求助——"请帮我找回我的身体"。当你收集齐他的骸骨后。。。</p>
+							<p>Game introduction: in a wonderful and weird dream, a stranger asks for your help:"find my body...please".</p>
+							<br>
+							<p>Hoever, after you helped him...</p>
 
 							<br>
 							<div class="img__wrap body_img">
-								<img src="media/game2.png" alt="陌生人的梦游戏截图" class="center overviewimg">
-								<a target="_blank" href="https://www.bilibili.com/video/BV1iV411W766/"><p class="img__description center"><br>观看游戏流程<br>(b站)</p></a>
+								<img src="media/game2.png" alt="Screenshot" class="center overviewimg">
+								<a target="_blank" href="https://www.bilibili.com/video/BV1iV411W766/"><p class="img__description center"><br>Gameplay video<br>(Bilibili - Chinese)</p></a>
 							</div>
 
-							<a target="_blank" href="https://pan.baidu.com/s/1mQXuduqMa_Jb0s0tMSX_gg"><p class="center" color="green">获取可玩版本<br>[提取码amao]</p></a>
+							<a target="_blank" href="https://pan.baidu.com/s/1mQXuduqMa_Jb0s0tMSX_gg"><p class="center" color="green">Playable build - Baidu drive<br>[Extract code - amao]</p></a>
 							<br>
-							<p>鼠标悬浮剧透：</p>
-							<p class="secrettext">拼凑起守梦人的骸骨后，你代替他成为了新的守梦人。在下一个流浪者误入这个梦境前，你将永远在梦魇中游荡。。。</p>
+							<p>Spoiler</p>
+							<p class="secrettext">After you collect his body parts and reassemble them into the graveyard, you become the next dream wanderer. Before the next intruder comes, you shall never awake...</p>
 						</div>
 						<div class="overviewdiv projectcontent unfocused" id="algoproj" associated-img="media/bg_algo.jpg">
 							<div class="img__wrap intro_img">
-								<img src="media/algologo.png" alt="算法可视化" class="center overviewimg">
+								<img src="media/algologo.png" alt="Algorithm with visualization" class="center overviewimg">
 								<a target="_blank" href="media/bg_algo.jpg"><p class="img__description center"><br>Check out the background image</p></a>
 							</div>
-							<h2 class="center">算法及其可视化<br></h2>
+							<h2 class="center">Algorithm with visualkization<br></h2>
 							<p class="center">[2018.8~2018.12]</p>
-							<p class="center">独立完成的课程作业<br>(均含全部加分项)</p>
+							<p class="center">Independent assignments<br>(with all extra credits)</p>
 							<ul>
-								<li>AVL与红黑树</li>
+								<li>AVL and red-black tree</li>
 								<li>Dijkstra</li>
-								<li>图灵机</li>
-								<li>快排与堆排序</li>
+								<li>Turing machine</li>
+								<li>Sorting algorithms</li>
 							</ul>
-							<a target="_blank" href="https://github.com/CottageLord/CS_Courses/tree/main/CS345" class="center"><p>查看全部代码与可视化图片</p></a>
+							<a target="_blank" href="https://github.com/CottageLord/CS_Courses/tree/main/CS345" class="center"><p>Code and visualization images (github)</p></a>
 							<br>
 						</div>
 					</div>
@@ -222,48 +230,50 @@
 
 						<div class="overviewdiv projectcontent unfocused" id="junglekasino" associated-img="media/bg_JungleKasino.png">
 							<div class="img__wrap intro_img">
-								<img src="media/JungleKasino.gif" alt="游玩演示" class="center overviewimg">
+								<img src="media/JungleKasino.gif" alt="Gameplay" class="center overviewimg">
 							</div>
-							<h2 class="center">Unity2D游戏<br>丛林秘境</h2>
+							<h2 class="center">Unity2D Game<br>Jungle Maze</h2>
 							<p class="center">[2022.1~3]</p>
-							<p class="center">独立开发者</p>
+							<p class="center">Independent developer/researcher</p>
 							<br>
-							<p>《丛林秘境》是一款俯视角2D像素射击游戏，也是我研究生论文的数据采集器，使用Unity开发。在该游戏中，打败敌人即可获得一张随机卡片，包括武器弹药，治疗和地图碎片。玩家可以通过捡取，使用，组合多种地图碎片，以控制下一张地图的随机生成风格。由于大部分武器都有优势地形和劣势地形，玩家需要权衡手中的武器补给和不时来捣乱的敌人卡种类，以在地图碎片使用上展现策略。</p>
+							<p>Jungle Maze is a top-down pixel shooter game, also the research target for my master's thesis. It was used in researching a game mechanic - adaptive procedural content generation. This mechanic focuses on enhancing players' autonomy in the random generation process. To allow players control the generation, the game drops various supply and map generator cards when enemies are defeated. To collect, use and combine various cards, the future map styles will change accordingly. As most weapons perform differently on different terrains, players need to balance between the weapons and the map generator cards in order to win the game.</p>
 							<br>
-							<a class="center" href="https://mfdarenz.itch.io/jungle-maze">下载游戏 (itch.io主页) </a>
+							<a class="center" href="https://mfdarenz.itch.io/jungle-maze">Download playable (itch.io) </a>
 							<br>
-							<a class="center" href="https://github.com/CottageLord/CS_Courses/blob/main/Notes/GSND_Thesis_Submission_Yang_Hu.pdf">阅读论文</a>
+							<a class="center" href="https://github.com/CottageLord/CS_Courses/blob/main/Notes/GSND_Thesis_Submission_Yang_Hu.pdf">Read my thesis</a>
 							<br>
-							<p>使用Assembly Reference分离了不同的逻辑模块，优化了游戏编译速度。使用Event系统实现不同模块之间的沟通 (如物品、背包模块与地图随机生成模块的互动)。</p>
+							<p>Created map generation logic, customized inventory system and weapon system, heavily used event system to keep game codes clean with neat assembly reference seperation.</p>
 							<br>
-							<p>设计和实现了地形卡和地图随机生成算法。</p>
+							<p>Designed items and map generation logic.</p>
 							<br>
 							<div class="img__wrap body_img">
-								<img src="media/JungleMazeMaps.jpg" alt="地图碎片系统" class="center overviewimg">
-								<a target="_blank" href="media/JungleMazeMaps.jpg"><p class="img__description center"><br>点击查看<br>完整地图碎片系统<br></p></a>
+								<img src="media/JungleMazeMaps.jpg" alt="Map generator system" class="center overviewimg">
+								<a target="_blank" href="media/JungleMazeMaps.jpg"><p class="img__description center"><br>Click to view<br>map generation game design<br></p></a>
 							</div>
-							<p>设计和平衡了多种武器，通过调整武器的弹道和手感，突出了不同武器在不同距离，不同空间上的优劣势。</p>
+							<p>Designed and tuned weapons - by adjusting bullet trace, distribution and firing behaviors, made sure that weapons have balanced but different performances on respective maps.</p>
 							<br>
-							<p>设计和实现了顶部物品栏机制。优化了交互体验 (浏览物品栏时游戏进入灰屏慢动作，允许玩家在使用武器卡时合并同类卡片，敌人卡与地图碎片均会自动变形成其他同类卡，以允许玩家用时间、空间换取更多选择等)。</p>
+							<p>Designed enemy AI with enemy cards. Enemies are differenciated by weapons. Players thereby need to combine enemy cards with mape generator cards in order to create advantages in the next map</p>
 							<br>
-							<p>游戏内置了中英文双语。</p>
-							<p>早期版本预告片：</p>
+							<p>Designed and implemented the card inventory and UI on the top. Optimized interaction experience - game would slow-down when browsing items; same adjacent item cards combine automatically, creating a connect-3 like gameplay; enemy and map cards change periodically, allowing players to exchange waiting time for more possibilities.</p>
+							<br>
+							<p>The game have both English and Chinese languages</p>
+							<p>Early trailer</p>
 							<br>
 							<video class="center overviewimg" controls>
 							    <source src="media/videos/Jungle Kasino Trailer.MOV" type="video/mp4">
 							</video>
 							<br>
-							<p>后期版本预告片：</p>
+							<p>Final trailer</p>
 							<br>
 							<video class="center overviewimg" controls>
 							    <source src="media/videos/Jungle_Maze_Trailer_Yang_Hu.mp4" type="video/mp4">
 							</video>
 							<br>
-							<p>游戏的设计初衷是为了探究玩家体验的两个课题：</p>
+							<p>This game was used in 2 research studies:</p>
 							<br>
-							<p>1. 在维持随机结果数学期望一致的情况下，稳定补偿和间歇过度补偿对玩家体验的不同影响。</p>
+							<p>1. Under the same probability expectation, how could steady compensation (when ammo supply gets low recently, compensate the player with a larger amount of ammo supply) and "super-lucky moment" (record all "bad lucks" and give a "super luck" supply periodically) differ in player experiences?</p>
 							<br>
-							<p>2. 在地图视觉风格一致的情况下，允许玩家控制地图生成 (Adaptive Generation) 的机制，与直接游玩提前设计好的地图相比，在制造不同类别的快乐体验上有什么具体不同，整体上是否有优劣。详见<a class="center" href="https://github.com/CottageLord/CS_Courses/blob/main/Notes/GSND_Thesis_Submission_Yang_Hu.pdf">论文</a>。</p>
+							<p>2. With a consisten art style, how could Adaptive Generation affect player experience compared to normal-crafted game maps? <a class="center" href="https://github.com/CottageLord/CS_Courses/blob/main/Notes/GSND_Thesis_Submission_Yang_Hu.pdf">read</a>。</p>
 							<br>
 						</div>
 						<div class="overviewdiv projectcontent unfocused" id="opsysproj" associated-img="media/bg_usloss.jpg">
