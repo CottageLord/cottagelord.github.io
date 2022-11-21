@@ -5,6 +5,7 @@ html, body {
     margin: auto;
     color: white;
     max-width: 100%;
+    overflow: hidden;
 }
 
 html {
@@ -28,6 +29,10 @@ html {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #111; 
+}
+
+.noteQuickView {
+    
 }
 
 .smallImg {
