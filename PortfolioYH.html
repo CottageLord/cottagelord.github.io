@@ -8,7 +8,7 @@
 		<link rel="stylesheet" href="PortfolioYH.css" />
 		<link rel="icon" href="media/logo.png">
 		<script src="PortfolioYH.js" type="text/javascript"></script>
-		<title>阿茅的主页</title>
+		<title>Yang's Homepage</title>
 	</head>
 	<body>
 			<!-- Navigation -->
@@ -33,7 +33,7 @@
 					        <div class="text1">Hello!</div>
 					        <div class="text2">
 					        	<div id="namecontainer">
-					        		<div class="floater"><span style="color:#99FFCC;">I am Yang</span></div>
+					        		<div class="floater"><span style="color:#FF6666;">I am Yang</span></div>
 					        	</div>
 					    	</div>
 					    </div>
@@ -43,9 +43,9 @@
 					</div>
 					<div id="thanksletter">
 						<p>Welcome to my homepage!</p>
-						<p>I am <span style="color:#FF6666;">Yang, </span>a humble learner seeking knowledge <br>about <span style="color:yellow;">video games</span>.</p>
-						<p>I am currently studying in <span style="color:#33FFFF;">game design</span>。</p>
-						<p><span style="color:#66FF66;">game engine </span>and <span style="color:#F35E99;">computer graphics</span>，</p>
+						<p>I am <span style="color:#FF6666;">Yang, </span>a humble learner seeking knowledge <br>in <span style="color:yellow;"> game sciences</span>.</p>
+						<p>I am currently studying in <span style="color:#33FFFF;">game design</span>,</p>
+						<p><span style="color:#66FF66;">game engine </span>and <span style="color:#F35E99;">computer graphics</span>.</p>
 						<p>This webpage contains some of mine</p>
 						<p><span style="color:#FF9933;">study notes and practices</span>.</p>
 						<p><span style="color:#99FFCC;"></span>Thanks for visiting!</p>
@@ -538,102 +538,103 @@
 							<br>
 							<p>Game Rule:</p>
 							<ul>
-								<li>游戏开始前，所有玩家获得1张角色卡与3张初始卡牌</li>
-								<li>玩家逆时针进行回合，每回合玩家抽一张卡，然后开始回合</li>
-								<li>当前玩家投掷一枚硬币，选择本回合的行动点数是奇数(1/3/5)还是偶数(0/2/4)</li>
-								<li>移动(消耗1)和使用卡牌(消耗因卡而异)都会消耗行动点，玩家必须花完自己声称的行动点</li>
-								<li>移动会影响玩家在场上的位置，也会影响与其他玩家的距离，攻击等卡牌需要对象在攻击范围内</li>
-								<li>不同的动物在不同的地形(草原，雨林，沼泽)会有不同的表现，比如，动物的攻击无法穿过自己不善长的地形块(如猴子不能越过沼泽进行攻击)，身陷不擅长地块的动物，攻击距离为1。具体的规则详见游戏指南</li>
-								<li>当玩家的血量(初始3)减少至0，且没有得到治疗，则玩家被淘汰</li>
-								<li>回合结束时，玩家手里的卡牌不能超过3张。多出的卡牌需丢弃</li>
-								<li>每两轮结束时，投掷一枚骰子，对应边的地图将消失，在该地区的动物减少一点血，并强制移动至最近的合法格子</li>
-								<li>最后留下的玩家获胜</li>
+								<li>All players start with 1 (out of 3) animal cards and 3 hand cards</li>
+								<li>In every player's turn, he/she should draw a hand card.</li>
+								<li>Then, he/she should throw a coin and claim action points. Face for odd points (1/3/5) and tail for even points (0/2/4)</li>
+								<li>Moving (1 ap) and playing cards consume action points. Players must use all points he/she claimed. </li>
+								<li>There is a concept of distance in this game. Moving affect player's relative distance to others.</li>
+								<li>Different species act differently on various terrains. For example, monkey's distance attack cannot target the animals in the mash. Animals stay in the unprefered terrain only have attack distance of 1./li>
+								<li>Every player has an initial health of 3. He/She losts when health drops to 0 and no heal option is available.</li>
+								<li>When a player's turn ends, he/she cannot hold more than 3 cards. The redundant cards should be discarded.</li>
+								<li>After every two rounds, a map side will be removed according to a dice roll. Animals standing on these sides will get -1 health and will be forced to move to nearst safe map piece.</li>
+								<li>The last one standing wins.</li>
 							</ul>
 						</div>
 					</div>
 					<div class="column">
-						<div class="overviewdiv unfocused" id="terraserver" alt="泰拉瑞亚服务器" associated-img="media/designs/bg_terraria.png">
+						<div class="overviewdiv unfocused" id="terraserver" alt="Terraria Server" associated-img="media/designs/bg_terraria.png">
 							<div class="img__wrap intro_img">
-								<img src="media/designs/terralogo.jpg" alt="泰拉瑞亚" class="center overviewimg">
-								<a target="_blank" href="https://github.com/CottageLord/CS_Courses/tree/main/Notes/Terra"><p class="img__description center"><br>查看全部服务器地图文件</p></a>
+								<img src="media/designs/terralogo.jpg" alt="Terraria" class="center overviewimg">
+								<a target="_blank" href="https://github.com/CottageLord/CS_Courses/tree/main/Notes/Terra"><p class="img__description center"><br>Check all server files</p></a>
 							</div>
 
-							<h2 class="center">泰拉瑞亚<br>服务器运营</h2>
+							<h2 class="center">Terraria<br>Server Host</h2>
 							<p class="center">[2016~2018]</p>
 							<ul>
-								<li>搭建了基于Tshock的泰拉瑞亚服务器</li>
-								<li>独立配置了MySQL数据库，实现了跨地图联机</li>
-								<li>基于SEconomy插件，<a target="_blank" href="https://github.com/CottageLord/CS_Courses/tree/main/Notes/Terra/designs">设计</a>并配置了RPG系统</li>
-								<li>长期运营服务器，设计并举办了各类活动，包括但不限于：双倍爆率/经验活动，pvp活动，竞速和各类小游戏</li>
-								<li>最高在线玩家数约30人</li>
-								<li>撰写了<a target="_blank" href="https://tieba.baidu.com/p/4535763499">开服指南（百度贴吧）</a></li>
+								<li>Built various Terraria server based on Tshock.</li>
+								<li>Created multi-map online multiplayer experience with MySql database.</li>
+								<li><a target="_blank" href="https://github.com/CottageLord/CS_Courses/tree/main/Notes/Terra/designs">Designed</a> and configured RPG system with SEconomy Plugin.</li>
+								<li>Runed the server as an onging game. Designed and hosted online events, like monster festival, underground battle royale, speed run, speed drop and fishing games.</li>
+								<li>Highest weekly-active-user is 30.</li>
+								<li>Wrote <a target="_blank" href="https://tieba.baidu.com/p/4535763499">server host instruction</a> (baidu forum)</li>
 							</ul>
-							<p>玩家在线上修建了我的雕像</p>
-							<img src="media/designs/statue1.png" alt="文字冒险游戏" class="center overviewimg">
-							<p>部分特殊活动：</p>
+							<p>Players built my statue in the server:</p>
+							<img src="media/designs/statue1.png" alt="statue" class="center overviewimg">
+							<p>Some online activities</p>
 
 							<div class="img__wrap body_img">
-								<img src="media/designs/fall.png" alt="下100层" class="center overviewimg">
-								<a target="_blank" href="media/designs/fall.png"><p class="img__description center"><br>是勇士就下一百层：玩家自由落体避开障碍（有预警），无伤落入坑底者通过。<br>奖品：家园服预设别墅一套。</p></a>
+								<img src="media/designs/fall.png" alt="down fall" class="center overviewimg">
+								<a target="_blank" href="media/designs/fall.png"><p class="img__description center"><br>Fall-down braves: players who safely land on the bottom line win. <br>Reward: a manshion in the Home Map</p></a>
 							</div>
 							<br>
 							<div class="img__wrap body_img">
-								<img src="media/designs/race.png" alt="竞速大赛" class="center overviewimg">
-								<a target="_blank" href="media/designs/race.png"><p class="img__description center"><br>独角兽竞速大赛：乘坐独角兽竞速。奖品：家园服黄金地段土地一块。</p></a>
+								<img src="media/designs/race.png" alt="Racing Game" class="center overviewimg">
+								<a target="_blank" href="media/designs/race.png"><p class="img__description center"><br>Unicorn racing competition. Reward: a 50x50 land in the Home Map</p></a>
 							</div>
 							<br>
-							<p>倒霉蛋钓鱼大赛：定期举行，独立服务器与存档。规定时间内钓到破鞋破罐子最多的玩家取胜。奖品：金色鱼竿</p>
+							<p>Unlucky fisherman: regular event. The one who gets most rotten boots wins. Reward: golden fish pole.</p>
 							<br>
-							<p>洞穴厮杀：定期举行，独立服务器与存档。在插有零星火把的通道里仅使用钩爪与匕首进行淘汰制pvp。</p>
+							<p>Underground battle royale: regular event. Players compete in a dark cave with only stabbers and grabing hooks.</p>
 							<br>
 						</div>
 					</div>
 					<div class="column">
-						<div class="overviewdiv unfocused" id="helpsean" alt="文字冒险游戏" associated-img="media/designs/bg_textad.jpg">
+						<div class="overviewdiv unfocused" id="helpsean" alt="Text adventure game" associated-img="media/designs/bg_textad.jpg">
 							<div class="img__wrap intro_img">
-								<img src="media/designs/textadlogo.png" alt="文字冒险游戏" class="center overviewimg">
-								<a target="_blank" href="https://github.com/CottageLord/CS_Courses/tree/main/ISTA451"><p class="img__description center"><br>查看游戏源文件(pdf)</p></a>
+								<img src="media/designs/textadlogo.png" alt="Text adventure game" class="center overviewimg">
+								<a target="_blank" href="https://github.com/CottageLord/CS_Courses/tree/main/ISTA451"><p class="img__description center"><br>See game files(pdf)</p></a>
 							</div>
-							<h2 class="center">纸质文字冒险游戏</h2>
+							<h2 class="center">Text adventure game</h2>
 							<p class="center">[2017.10]</p>
 							<br>
-							<p>你从睡梦中醒来，发现世界遍布丧尸。找寻不到你的家人，你想起了你的好友Sean。。。
+							<p>You wake up alone, find yourself in a zombie world. You cannot find your family members, the only one answers your call is your friend Sean...
 							<ul>
-								<li>设计了游戏的基本世界观和机制（纸板翻牌，页面跳转等）</li>
-								<li>设计了各类纸质机关和彩蛋，例如游戏封面隐藏的翻牌</li>
+								<li>Designed game story and mechanics (foldable cards and page skipping).</li>
+								<li>Designed easter eggs, like the hidden message on the cover page.</li>
 							</ul>
 							<br>
-							<p>鼠标悬浮剧透：</p>
-							<p class="secrettext">Sean噩梦般的同年，和他对你心生的嫉妒，将你拉入了他充满怨念的精神世界。在一步步深入这个血腥世界的真相后，你在一个地下室找到了弱小的，啜泣着的Sean。。。</p>
+							<p>Spoiler alert</p>
+							<p class="secrettext">Sean's unpleasant childhood memory created jealousy. You were pulled into his spiritual world. After revealing the darkness of this world, you find Sean crying in a basement.</p>
 						</div>
 					</div>
 					<div class="column">
 						<div class="overviewdiv unfocused" id="melonsmash" associated-img="media/designs/bg_melon.jpg">
 							<div class="img__wrap intro_img ">
-								<img src="media/designs/bg_melon.png" alt="爆裂瓜瓜" class="center overviewimg">
-								<a target="_blank" href="media/designs/melonlogo.png"><p class="img__description center"><br>点击查看游戏截图</p></a>
+								<img src="media/designs/bg_melon.png" alt="Melon Smash" class="center overviewimg">
+								<a target="_blank" href="media/designs/melonlogo.png"><p class="img__description center"><br>See Screenshot</p></a>
 							</div>
-							<h2 class="center">2D射击塔防游戏<br>爆裂瓜瓜</h2>
+							<h2 class="center">2D tower defense shooting game<br>Melon Smash</h2>
 							<p class="center">[2020.8]</p>
 							<br>
-							<p>爆裂瓜瓜是一款通过跨国在线合作的，以快速迭代为设计准则制作的塔防游戏小品。团队成员（共5人）分布于中国，美国，印度，伊朗。开发周期1周，净开发时长约30小时</p>
+							<p>Melon Smash is a team game design practice. The game is done within 48 hours. It tested team work in iterative game design staring with a simple idea.</p>
 							<ul>
-								<li>领导团队进行了多轮Brainstorm</li>
-								<li>主导确认了游戏的美术风格</li>
-								<li>领导编程团队进行了多轮快速开发，团队成员来自中国和印度</li>
+								<li>Hosted multiple rounds of brainstorms</li>
+								<li>Led graphical designs</li>
+								<li>Led engineering teams and took most of the coding tasks.</li>
 							</ul>
 							<div class="img__wrap body_img">
-								<img src="media/designs/melonlogo.png" alt="爆裂瓜瓜开发界面" class="center overviewimg">
-								<a target="_blank" href="https://github.com/voltr0x/MelonSmash"><p class="img__description center"><br>点击查看游戏代码(GitHub)</p></a>
+								<img src="media/designs/melonlogo.png" alt="Developing screenshot" class="center overviewimg">
+								<a target="_blank" href="https://github.com/voltr0x/MelonSmash"><p class="img__description center"><br>Click to see code(GitHub)</p></a>
 							</div>
 							<br>
 
-							<p>游戏规则</p>
+							<p>Game rule</p>
 							<ul>
-								<li>为了保卫南瓜大赛的候选大南瓜，农夫不惜动用田的其他瓜们来对付虫子们</li>
-								<li>可投掷的瓜在指定区域长大，农夫需要亲自捡起瓜来瞄准，攻击虫子</li>
-								<li>农夫拥有蓄力条，每当蓄力条满时，农夫可以亲自踢飞一条虫子</li>
-								<li>当有三只虫子冲破防御，农夫的大南瓜就被咬坏，无法参赛了</li>
+								<li>To join the PumKing competition, the farmer have to protect the pumpkins at all cost.</li>
+								<li>The farmer needs to throw other melons toward the invading worms in order to stop them.</li>
+								<li>The throwable melons grow up in a specific area. The farmer need to walk to that area, pick up melons, aim and throw at worms.</li>
+								<li>The farmer also has a kick skill with cooldown time. He can clear an area by kicking worms away.</li>
+								<li>After three worms enter the pumpkin, the pumpkin is destroyed and the famer cannot participate the contest.</li>
 							</ul>
 						</div>
 					</div>
@@ -644,14 +645,14 @@
 				<div class="headerspace"></div>
 				<div class="bodyspace">
 					<div class="column">
-						<div class="unfocused" id="codeabi" alt="代码能力" associated-img="media/bg_default.png">
-							<h2 class="center">代码经验</h2>
+						<div class="unfocused" id="codeabi" alt="Coding experience" associated-img="media/bg_default.png">
+							<h2 class="center">Coding experience</h2>
 						</div>
 						<br>
 						<div class="drakpurple" id="cpp" associated-img="media/bg_default.png">
 							<div class="img__wrap">
 								<h2 class="center">C/C++</h2>
-								<a target="_blank"><p class="img__description center skilldescription">约20000行</p></a>
+								<a target="_blank"><p class="img__description center skilldescription">20000+ lines</p></a>
 							</div>
 						</div>
 
@@ -659,7 +660,7 @@
 						<div class="drakred" id="web" associated-img="media/bg_default.png">
 							<div class="img__wrap">
 								<h2 class="center">HTML+CSS+JS</h2>
-								<a target="_blank"><p class="img__description center skilldescription">约10000行</p></a>
+								<a target="_blank"><p class="img__description center skilldescription">10000+ lines</p></a>
 							</div>
 						</div>
 						<br>
@@ -667,14 +668,14 @@
 						<div class="darkblue" id="csharp" associated-img="media/bg_default.png">
 							<div class="img__wrap">
 								<h2 class="center">C#</h2>
-								<a target="_blank"><p class="img__description center skilldescription">约5000行</p></a>
+								<a target="_blank"><p class="img__description center skilldescription">5000+ lines</p></a>
 							</div>
 						</div>
 						<br>
 						<div class="darkblue" id="python" associated-img="media/bg_default.png">
 							<div class="img__wrap">
 								<h2 class="center">Python</h2>
-								<a target="_blank"><p class="img__description center skilldescription">约5000行</p></a>
+								<a target="_blank"><p class="img__description center skilldescription">5000+ lines</p></a>
 							</div>
 						</div>
 
@@ -682,15 +683,15 @@
 						<div class="darkblue" id="java" associated-img="media/bg_default.png">
 							<div class="img__wrap">
 								<h2 class="center">Java</h2>
-								<a target="_blank"><p class="img__description center skilldescription">约5000行</p></a>
+								<a target="_blank"><p class="img__description center skilldescription">5000+ lines</p></a>
 							</div>
 						</div>
 
 						<br>
 						<div class="lightyellow" id="MIPS" associated-img="media/bg_default.png">
 							<div class="img__wrap">
-								<h2 class="center">MIPS汇编</h2>
-								<a target="_blank"><p class="img__description center skilldescription">约2000行</p></a>
+								<h2 class="center">MIPS assembly</h2>
+								<a target="_blank"><p class="img__description center skilldescription">2000+ lines</p></a>
 							</div>
 						</div>
 
@@ -698,7 +699,7 @@
 						<div class="lightyellow" id="arduino" associated-img="media/bg_default.png">
 							<div class="img__wrap">
 								<h2 class="center">Arduino</h2>
-								<a target="_blank"><p class="img__description center skilldescription">约2000行</p></a>
+								<a target="_blank"><p class="img__description center skilldescription">2000+ lines</p></a>
 							</div>
 						</div>
 
@@ -706,7 +707,7 @@
 						<div class="darkgreen" id="sql" associated-img="media/bg_default.png">
 							<div class="img__wrap">
 								<h2 class="center">SQL Oracle</h2>
-								<a target="_blank"><p class="img__description center skilldescription">约1000行</p></a>
+								<a target="_blank"><p class="img__description center skilldescription">1000+ lines</p></a>
 							</div>
 						</div>
 
@@ -723,14 +724,14 @@
 						<div class="darkgreen" id="haskell" associated-img="media/bg_default.png">
 							<div class="img__wrap">
 								<h2 class="center">Haskell</h2>
-								<a target="_blank"><p class="img__description center skilldescription">约1000行</p></a>
+								<a target="_blank"><p class="img__description center skilldescription">1000+ lines</p></a>
 							</div>
 						</div>
 						<br>
 						<div class="darkgreen" id="prolog" associated-img="media/bg_default.png">
 							<div class="img__wrap">
 								<h2 class="center">Prolog</h2>
-								<a target="_blank"><p class="img__description center skilldescription">约1000行</p></a>
+								<a target="_blank"><p class="img__description center skilldescription">1000+ lines</p></a>
 							</div>
 						</div>
 
@@ -738,7 +739,7 @@
 						<div class="darkgreen" id="scheme" associated-img="media/bg_default.png">
 							<div class="img__wrap">
 								<h2 class="center">Scheme</h2>
-								<a target="_blank"><p class="img__description center skilldescription">约1000行</p></a>
+								<a target="_blank"><p class="img__description center skilldescription">1000+ lines</p></a>
 							</div>
 						</div>
 
@@ -746,27 +747,27 @@
 						<div class="darkgreen" id="processing" associated-img="media/bg_default.png">
 							<div class="img__wrap">
 								<h2 class="center">Processing</h2>
-								<a target="_blank"><p class="img__description center skilldescription">约1000行</p></a>
+								<a target="_blank"><p class="img__description center skilldescription">1000+ lines</p></a>
 							</div>
 						</div>
 
 						<br>
 						<div class="darkgreen" id="openscad" associated-img="media/bg_default.png">
 							<div class="img__wrap">
-								<h2 class="center">openSCAD(参数化建模)</h2>
-								<a target="_blank"><p class="img__description center skilldescription">约1000行</p></a>
+								<h2 class="center">openSCAD</h2>
+								<a target="_blank"><p class="img__description center skilldescription">1000+ lines</p></a>
 							</div>
 						</div>
 					</div>
 					<div class="column">
 						<div class="unfocused" id="test" associated-img="media/bg_default.png">
-							<h2 class="center">应试成绩</h2>
+							<h2 class="center">Test Scores</h2>
 						</div>
 						<br>
 						<div class="unfocused darkgrey" id="toefl" associated-img="media/bg_default.png">
 							<div class="img__wrap">
 								<h2 class="center">TOEFL</h2>
-								<a target="_blank" href="media/toefl.png"><p class="img__description center skilldescription">104(点击查看成绩报告)</p></a>
+								<a target="_blank" href="media/toefl.png"><p class="img__description center skilldescription">104 (Click to view Report)</p></a>
 							</div>
 						</div>
 
@@ -774,102 +775,45 @@
 						<div class="unfocused darkgrey" id="gre" associated-img="media/bg_default.png">
 							<div class="img__wrap">
 								<h2 class="center">GRE</h2>
-								<a target="_blank" href="media/gre.png"><p class="img__description center skilldescription">322(点击查看成绩报告)</p></a>
+								<a target="_blank" href="media/gre.png"><p class="img__description center skilldescription">322 (Click to view Report)</p></a>
 							</div>
 						</div>
 						<br>
-						<div class="unfocused" id="gameexptitle" associated-img="media/bg_default.png">
-							<h2 class="center">游戏经历</h2>
-						</div>
-						<br>
-						<div class="unfocused darkgrey" id="gameexp1" associated-img="media/bg_default.png">
-							<p class="center">塞尔达传说系列</p>
-							<ul>
-								<li>旷野之息 [500小时+] 全收集</li>
-								<li>织梦岛 [50小时+] 通关</li>
-								<li>风之杖 [20小时+]</li>
-								<li>御天之剑 [20小时+]</li>
-								<li>众神三角力量 [10小时+]</li>
-							</ul>
-						</div>
-						<br>
-						<div class="unfocused darkgrey" id="gameexp2" associated-img="media/bg_default.png">
-							<p class="center">超级马力欧系列</p>
-							<ul>
-								<li>奥德赛 [100小时+] 通关</li>
-								<li>3D世界 [50小时+] 通关</li>
-								<li>银河 [30小时+] 通关</li>
-								<li>马力欧制造2 [20小时+]</li>
-								<li>64 [20小时+]</li>
-								<li>阳光 [10小时+]</li>
-							</ul>
-						</div>
-						<br>
-						<div class="unfocused darkgrey" id="gameexp6" associated-img="media/bg_default.png">
-							<p class="center">常玩的游戏</p>
-							<ul>
-								<li>原神 [500小时+] 冒险等级57</li>
-								<li>泰拉瑞亚 [1000小时+] 通关</li>
-								<li>FIFA [1000小时+] 周赛金1</li>
-								<li>炉石传说 [1000小时+] 传说</li>
-							</ul>
-						</div>
-						<br>
-						<div class="unfocused darkgrey" id="gameexp7" associated-img="media/bg_default.png">
-							<p class="center">其他单机游戏</p>
-							<ul>
-								<li>荒野大镖客:救赎2 [100小时+] 通关</li>
-								<li>巫师3:狂猎 [100小时+] 通关+DLC</li>
-								<li>GTA:圣安地列斯 [100小时+] 通关</li>
-								<li>GTA5 [50小时+] 通关</li>
-								<li>神秘海域4 [50小时+] 通关</li>
-								<li>地平线：零之曙光 [20小时+]</li>
-								<li>奥日与黑暗森林 [30小时+] 通关</li>
-							</ul>
-						</div>
-
-						<div class="unfocused darkgrey" id="gameexp8" associated-img="media/bg_default.png">
-							<p class="center">其他手游</p>
-							<ul>
-								<li>阴阳师 [1000小时+] 春之樱斗技3000分 服务器前300</li>
-								<li>荒野乱斗 [200小时+] 17000杯</li>
-								<li>百闻牌 [100 小时+] 超凡收藏家</li>
-							</ul>
-						</div>
+						
 					</div>
 					<div class="column">
 						<div class="unfocused" id="hobbies" associated-img="media/bg_default.png">
-							<h2 class="center">兴趣爱好</h2>
+							<h2 class="center">Habits</h2>
 						</div>
 						<br>
 						<div class="unfocused darkgrey" id="caligraphy" associated-img="media/bg_default.png">
-							<h2 class="center">英文书法</h2>
+							<h2 class="center">Calligraphy</h2>
 							<div class="img__wrap">
-								<img src="media/calig.jpg" alt="英文书法" class="center overviewimg">
-								<a target="_blank" href="media/calig.jpg"><p class="img__description center"><br>点击查看原图</p></a>
+								<img src="media/calig.jpg" alt="Calligraphy" class="center overviewimg">
+								<a target="_blank" href="media/calig.jpg"><p class="img__description center"><br>View image</p></a>
 							</div>
 						</div>
 						<br>
 						<div class="unfocused darkgrey" id="doodle" associated-img="media/bg_default.png">
-							<h2 class="center">涂鸦绘画</h2>
+							<h2 class="center">Doodles</h2>
 							<div class="img__wrap">
-								<img src="media/doodle1.jpg" alt="绘画" class="center overviewimg">
-								<a target="_blank" href="media/doodle1.jpg"><p class="img__description center"><br>点击查看原图</p></a>
+								<img src="media/doodle1.jpg" alt="" class="center overviewimg">
+								<a target="_blank" href="media/doodle1.jpg"><p class="img__description center"><br>View image</p></a>
 							</div>
 							<br>
 							<div class="img__wrap">
-								<img src="media/meme.jpg" alt="表情包" class="center overviewimg">
-								<a target="_blank" href="media/meme.jpg"><p class="img__description center"><br>点击查看原图</p></a>
+								<img src="media/meme.jpg" alt="" class="center overviewimg">
+								<a target="_blank" href="media/meme.jpg"><p class="img__description center"><br>View image</p></a>
 							</div>
 							<br>
 							<div class="img__wrap">
-								<img src="media/doodle2.jpg" alt="绘画" class="center overviewimg">
-								<a target="_blank" href="media/doodle2.jpg"><p class="img__description center"><br>点击查看原图</p></a>
+								<img src="media/doodle2.jpg" alt="" class="center overviewimg">
+								<a target="_blank" href="media/doodle2.jpg"><p class="img__description center"><br>View image</p></a>
 							</div>
 							<br>
 							<div class="img__wrap">
-								<img src="media/doodle3.jpg" alt="绘画" class="center overviewimg">
-								<a target="_blank" href="media/doodle3.jpg"><p class="img__description center"><br>点击查看原图</p></a>
+								<img src="media/doodle3.jpg" alt="" class="center overviewimg">
+								<a target="_blank" href="media/doodle3.jpg"><p class="img__description center"><br>View image</p></a>
 							</div>
 							<br>
 
@@ -877,7 +821,7 @@
 					</div>
 					<div class="column">
 						<div class="unfocused" id="contactme" associated-img="media/bg_default.png">
-							<h2 class="center">联系我</h2>
+							<h2 class="center">Contact me</h2>
 						</div>
 						<br>
 						<div class="unfocused darkgrey" id="email" associated-img="media/bg_default.png">
