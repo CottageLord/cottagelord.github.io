@@ -1,0 +1,473 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fixed background setup */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;  /* This ensures minimum height of viewport */
+    font-family: 'Arial', sans-serif;
+    background: url('./assets/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Frosted glass effect for text containers */
+.blur-bg-dense {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 
+        0 4px 6px rgba(0, 0, 0, 0.1),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.blur-bg {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 
+        0 4px 6px rgba(0, 0, 0, 0.1),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+
+/* Interactive Image Display */
+.img__wrap {
+    position: relative;
+}
+
+.img__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.img__description {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.img__wrap:hover .img__img {
+    filter: blur(5px);
+    transform: scale(1.1);
+}
+
+.img__wrap:hover .img__description {
+    opacity: 1;
+}
+
+/* Style for the link */
+.img__link {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+        
+/* Center the image container */
+.center {
+    margin: 0 auto;
+}
+
+/* Navigation styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem; /* Add margin for spacing */
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
+    padding: 0.75rem 1.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 0 auto; /* Center the nav-links */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: all 0.3s;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+.nav-links a:hover {
+    color: #007bff;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Content container */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Main content wrapper */
+.main-content {
+    flex: 1 0 auto;  /* This will make it take up available space */
+    width: 100%;
+}
+
+/* Bio section styles */
+.bio-section {
+    display: grid;
+    grid-template-columns: minmax(200px, 1fr) 2fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    min-height: fit-content;
+}
+
+.bio-image {
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.bio-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%; /* Making it a bit taller to give room for adjustment */
+    object-fit: cover;
+    object-position: top 40%; /* This will make the top shrink slower than bottom */
+    display: block;
+}
+
+.bio-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.bio-content h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.bio-content p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* News section */
+.news-section {
+    margin-top: 3rem;
+}
+
+.news-title {
+    font-size: 24px;
+}
+
+.news-item {
+    margin-bottom: 1.5rem;
+}
+
+.news-date {
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 0.5rem;
+}
+
+/* Card grid system */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 
+        0 4px 6px rgba(0, 0, 0, 0.1),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.card-text {
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Waterfall layout */
+.waterfall {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.waterfall-item {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.waterfall-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.waterfall-item h3 {
+    margin: 0.5rem 0;
+}
+
+.waterfall-item p {
+    margin: 0;
+}
+
+/* Download button */
+.download-btn {
+    display: inline-block;
+    background: #007bff;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.download-btn:hover {
+    background: #0056b3;
+}
+
+/* Mobile menu button */
+.menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: absolute;  /* Added this */
+    right: 2rem;        /* Added this */
+    top: 1rem;          /* Added this */
+    z-index: 1001;      /* Added this */
+}
+
+/* Footer styles */
+.footer-area {
+    flex-shrink: 0; /* Prevents footer from shrinking */
+    width: 100%;
+    background: rgb(34, 34, 34);
+    color: #777;
+    padding: 2rem 0;
+}
+
+.footer-area .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.footer-area .row {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.single-footer-widget h6 {
+    color: #fff;
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+}
+
+.footer-text {
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+.footer-social {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.footer-social a {
+    color: #777;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: #fff;
+}
+
+.single-footer-widget p {
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.col-lg-5 {
+    flex: 1;
+}
+
+.col-lg-2 {
+    text-align: right;
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+    .waterfall {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .waterfall {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 4rem;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        flex-direction: column;
+        padding: 1rem;
+        text-align: center;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        min-width: 200px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 0.75rem 1rem;   /* Added this */
+        width: 100%;             /* Added this */
+    }
+
+    .bio-section {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .bio-image {
+        max-width: 300px;
+        margin: 0 auto;
+        padding-top: 100%;
+    }
+
+    .bio-content {
+        text-align: center;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-area .row {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    
+    .col-lg-2 {
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+    }
+    
+    .waterfall {
+        grid-template-columns: 1fr;
+    }
+}
