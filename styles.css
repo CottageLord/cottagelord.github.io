@@ -66,8 +66,14 @@ html, body {
 
 .img__wrap {
     position: relative;
-    aspect-ratio: 1/1; /* This creates a square container */
-    overflow: hidden; /* This will prevent tall images from overflowing */
+    overflow: hidden;
+    margin-bottom: 1rem; /* Add consistent spacing between image and text */
+}
+
+/* Update h2 styling to remove any default margins */
+.card h2 {
+    margin-top: 0;    /* Remove top margin */
+    margin-bottom: 1rem; /* Add consistent spacing below heading */
 }
 
 .img__description {
@@ -262,7 +268,7 @@ html, body {
     width: 100%;
     height: auto;
     border-radius: 4px;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
 }
 .card-title {
     font-size: 1.25rem;
