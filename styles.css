@@ -51,6 +51,15 @@ html, body {
     position: relative;
 }
 
+.img_30 {
+    width: 30%;  /* 30% of parent div */
+    height: auto;  /* maintain aspect ratio */
+    object-fit: cover;
+    transition: all 0.3s ease;
+    display: block;  /* to allow margin auto to work */
+    margin: 0 auto;  /* centers horizontally */
+}
+
 .img__img {
     width: 100%;
     height: 100%;
@@ -74,7 +83,7 @@ html, body {
 }
 
 .img__wrap:hover .img__img {
-    filter: blur(5px);
+    filter: blur(1px);
     transform: scale(1.1);
 }
 
