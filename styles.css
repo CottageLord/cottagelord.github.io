@@ -261,15 +261,37 @@ html, body {
     border-radius: 4px;
     margin-bottom: 1rem;
 }
-
 .card-title {
     font-size: 1.25rem;
     margin-bottom: 1rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
 }
 
 .card-text {
     color: #333;
     line-height: 1.6;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+}
+
+/* Add these container styles to ensure proper width control */
+.card {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1rem; /* Add some padding if you haven't already */
+}
+
+
+.card-text a {
+    word-break: break-all; /* Forces breaks within words */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    max-width: 100%;
+    display: inline-block;
+    white-space: pre-wrap; /* Allows wrapping at any point */
 }
 
 /* Waterfall layout */
