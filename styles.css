@@ -59,15 +59,17 @@ html, body {
 .img__img {
     width: 100%;
     height: auto;
-    max-height: 100%; /* Changed from 100vw */
-    object-fit: cover;
+    max-height: 500px;
+    object-fit: contain;
     transition: all 0.3s ease;
 }
 
+/* Style the image container */
 .img__wrap {
     position: relative;
     overflow: hidden;
-    margin-bottom: 1rem; /* Add consistent spacing between image and text */
+    margin-bottom: 1rem;
+    flex: 1; /* This will make it take up available space */
 }
 
 /* Update h2 styling to remove any default margins */
@@ -262,6 +264,10 @@ html, body {
         0 4px 6px rgba(0, 0, 0, 0.1),
         inset 0 0 0 1px rgba(255, 255, 255, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.2);
+    /* Add these properties to make the card a flex container */
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Make sure card takes full height */
 }
 
 .card img {
@@ -270,6 +276,13 @@ html, body {
     border-radius: 4px;
     margin-bottom: 0;
 }
+
+/* Make h2 stick to the bottom */
+.card h2 {
+    margin-top: auto; /* This pushes the h2 to the bottom */
+    margin-bottom: 0;
+}
+
 .card-title {
     font-size: 1.25rem;
     margin-bottom: 1rem;
