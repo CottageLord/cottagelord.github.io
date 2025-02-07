@@ -47,10 +47,6 @@ html, body {
 
 
 /* Interactive Image Display */
-.img__wrap {
-    position: relative;
-}
-
 .img_30 {
     width: 30%;  /* 30% of parent div */
     height: auto;  /* maintain aspect ratio */
@@ -62,9 +58,16 @@ html, body {
 
 .img__img {
     width: 100%;
-    height: 100%;
+    height: auto;
+    max-height: 100%; /* Changed from 100vw */
     object-fit: cover;
     transition: all 0.3s ease;
+}
+
+.img__wrap {
+    position: relative;
+    aspect-ratio: 1/1; /* This creates a square container */
+    overflow: hidden; /* This will prevent tall images from overflowing */
 }
 
 .img__description {
