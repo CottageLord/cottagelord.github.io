@@ -14,13 +14,14 @@
                 <h1 class="project-title"><i>EyeTrackVR / Unity</i><br>Affordable VR Eye-Tracking Add-on for Research</h1>
                 <div class="project-meta">
                     <span>[Timeline: 2025.01 - 2025.05]</span> | 
-                    <span>Role: Independent Developer / Researcher</span>
+                    <span>Role: Independent Developer / Researcher</span><br>
+                    <span>Author: Yang Hu, Clemson University</span>
                 </div>
             </div>
 
             <div class="center">
                 <div class="img__wrap">
-                        <img src="hardwareSetup.jpg" alt="Project Screenshot" style="width: 100%;">
+                    <img src="hardwareSetup.png" alt="Hardware Setup" style="width: 100%;">
                 </div>
                 <p style="text-align: center;">Figure 1: The hardware modification on a non-eye-tracking VR headset.</p>
                 <br>
@@ -29,38 +30,55 @@
             <div class="blur-bg-dense">
                 <h2>Overview</h2>
                 <br>
-                <p>This project presents a <b>cost-effective eye-tracking solution</b> (hardware + software) designed to transform a standard non-eye-tracking VR headset (e.g., Meta Quest 3) into a sophisticated eye-tracking research instrument. The system leverages open-source technology to deliver research-grade eye tracking at a fraction of commercial solutions' cost.</p>
+                <p>This project presents a <b>cost-effective eye-tracking solution</b> (hardware + software) designed to upgrade a standard non-eye-tracking VR headset (e.g., Meta Quest 3) into an eye-tracking compatible research instrument at a fraction of commercial solutions' cost. The system achieves an average tracking accuracy of 4.8° of visual angle with a refresh rate of 60 Hz, making it suitable for specific research applications including attention studies, interaction technique development, and gaze analytics.</p>
                 <div class="img__wrap">
-                        <img src="illustration.jpg" alt="Project Screenshot" style="width: 100%;">
+                    <img src="illustration.jpg" alt="System Illustration" style="width: 100%;">
                 </div>
                 <p style="text-align: center;">Figure 2: A simplified illustration of the hardware setup and overall data flow.</p>
             </div>
-
+            <br>
             <div class="blur-bg-dense">
                 <h2>Motivation</h2><br>
-                <p>Eye tracking represents a <b>critical component</b> in VR research, enabling precise analysis of user attention patterns, cognitive processes, and interaction behaviors. However, commercial eye-tracking solutions present significant barriers to entry:</p>
+                <p>Eye tracking represents a <b>critical component</b> in VR research, enabling analysis of user attention patterns, interaction behaviors, and enabling foveated rendering. However, commercial eye-tracking solutions present significant barriers to entry:</p>
                 <br>
                 <ul>
-                    <li><b>High Cost:</b> Professional VR headsets with integrated eye-tracking (e.g., Varjo XR-3, HTC Vive Pro Eye) typically cost between <b>$1,500-$6,500</b>, placing them beyond the reach of many research budgets.</li>
-                    <li><b>Limited Accessibility:</b> Many eye-tracking solutions require proprietary software ecosystems or specialized hardware.</li>
-                    <li><b>Data Ownership:</b> Commercial platforms may impose restrictions on raw data access or implement "black box" processing algorithms.</li>
+                    <li><b>High Cost:</b> Professional VR headsets with integrated eye-tracking (e.g., Varjo XR-3, HTC Vive Pro Eye) typically cost between <b>$1,500-$6,500</b>, placing them beyond the reach of many research budgets and educational institutions.</li>
+                    <li><b>Limited Accessibility:</b> Many eye-tracking solutions require proprietary software ecosystems or specialized hardware environments, limiting flexibility in research design.</li>
+                    <li><b>Data Ownership:</b> Commercial platforms may impose restrictions on raw data access or implement "black box" processing algorithms, limiting research transparency.</li>
+                    <li><b>Educational Barriers:</b> Students and early-stage researchers often lack access to expensive equipment needed to gain hands-on experience with eye tracking technology.</li>
                 </ul>
                 <br>
-                <p>This project aims to democratize eye-tracking research by providing an <b>affordable alternative</b> ($200-300 total build cost) while maintaining sufficient accuracy for many research applications.</p>
+                <p>This project aims to demonstrate that an <b>affordable eye-tracking solution</b> ($200-300 total build cost) can serve as a practical alternative for educational environments and exploratory research, while providing students with valuable hands-on experience in computer vision and hardware integration.</p>
             </div>
-
+            <br>
             <div class="blur-bg-dense">
-                <h2>Technical Specifications (TODO)</h2>
+                <h2>Results Overview</h2>
+                <br>
+                <!-- Placeholder for final hardware build photo -->
+                <div class="img__wrap center">
+                    <img src="./final.jpg" alt="Final Build" style="width: 100%; background: #f0f0f0; min-height: 400px;">
+                    <p style="text-align: center;"><i>Figure 8: The final build of the VR eye tracking hardware system (image placeholder).</i></p>
+                </div>
+                <p><i>Note: These specifications were measured in April 2025 using the wired configuration.</i></p>
                 <br>
                 <ul>
-                    <li><b>Sampling Rate:</b> ~50-70Hz (dependent on wireless vs. wired configuration)</li>
-                    <li><b>Accuracy:</b> ~° visual angle (after calibration)</li>
-                    <li><b>Latency:</b> ~ms (dependent on wireless vs. wired configuration)</li>
-                    <li><b>Data Output:</b> Real-time gaze vectors and eye openness</li>
-                    <li><b>Data Format:</b> OSC protocol for easy integration with research software</li>
+                    <li><b>Sampling Rate:</b> ~60 Hz (wired configuration offers higher stability than wireless)</li>
+                    <li><b>Accuracy:</b> 4.8° visual angle (SD = 1.8°)</li>
+                    <li><b>Latency:</b> ~20-50 ms (varies by configuration)</li>
+                    <li><b>Data Output:</b> Real-time gaze vectors, eye openness, pupil diameter</li>
+                    <li><b>Data Format:</b> OSC (Open Sound Control) protocol for easy integration</li>
+                    <li><b>Total Cost:</b> ~$280 for hardware (excluding VR headset)</li>
+                </ul>
+                <br>
+                <h3>Practical Discrimination Capabilities</h3>
+                <p>The 4.8° accuracy translates to different real-world discrimination abilities:</p>
+                <ul>
+                    <li><b>Virtual Desktop (50cm):</b> ~4.2cm discrimination - suitable for larger UI elements like app icons or menu sections</li>
+                    <li><b>Arm's Length (1m):</b> ~8.4cm discrimination - ideal for detecting focus on larger objects in near-field environments</li>
+                    <li><b>Far Display (5m):</b> ~42cm discrimination - appropriate for determining which section of a large virtual display receives attention</li>
                 </ul>
             </div>
-
+            <br>
             <div class="blur-bg-dense">
                 <h2>Required Parts</h2>
                 <br>
@@ -68,15 +86,17 @@
                 <br>
                 
                 <div class="img__wrap">
-                    <img src="eyeTrackVR.png" alt="Project Screenshot" style="width: 100%;">
+                    <img src="eyeTrackVR.png" alt="EyeTrackVR Components" style="width: 100%;">
                 </div>
             </div>
+            <br>
             <div class="blur-bg-dense">
+                <h3>Core Components</h3>
                 <div class="waterfall">
                     <div class="waterfall-item">
                         <div class="img__wrap center">
                             <a href="./quest3.jpg" class="img__link">
-                                <img src="./quest3.jpg" alt="quest3" class="img__img">
+                                <img src="./quest3.jpg" alt="VR Headset" class="img__img">
                                 <p class="img__description">Screenshot - Click to enlarge</p>
                             </a>
                             <p>A non-eye-tracking <b>VR headset</b> (e.g., Meta Quest 3, ~$499)</p>
@@ -85,7 +105,7 @@
                     <div class="waterfall-item">
                         <div class="img__wrap center">
                             <a href="./IRfilterlessCam.jpg" class="img__link">
-                                <img src="./IRfilterlessCam.jpg" alt="socialVRstream" class="img__img">
+                                <img src="./IRfilterlessCam.jpg" alt="IR Cameras" class="img__img">
                                 <p class="img__description">Screenshot - Click to enlarge</p>
                             </a>
                             <p>Minimum 2 <b>IR-sensitive mini cameras</b> (recommend purchasing 4 units, as IR filter removal carries risk of damage; ~$10-15 each)</p>
@@ -94,25 +114,25 @@
                     <div class="waterfall-item">
                         <div class="img__wrap center">
                             <a href="./xiaoSense.png" class="img__link">
-                                <img src="./xiaoSense.png" alt="socialVRstream" class="img__img">
+                                <img src="./xiaoSense.png" alt="Microcontroller" class="img__img">
                                 <p class="img__description">Screenshot - Click to enlarge</p>
                             </a>
                         </div>
                         <p>2 <b>Microcontroller boards</b> for image processing and data transmission (options include ESP32-CAM, Xiao ESP32S3 Sense; ~$15-25 each)</p>
                     </div>
-
+                    
                     <div class="waterfall-item">
                         <div class="img__wrap center">
                             <a href="./led.png" class="img__link">
-                                <img src="./led.png" alt="socialVRstream" class="img__img">
+                                <img src="./led.png" alt="IR LEDs" class="img__img">
                                 <p class="img__description">Screenshot - Click to enlarge</p>
                             </a>
                         </div>
-                        <p><b>IR illumination system</b> (recommended to use the official LED set from EyeTrackVR; ~$20)</p>
+                        <p><b>IR illumination system</b> using 850nm wavelength IR LEDs (recommended: official LED set from EyeTrackVR with XL-3216HIRC-850; ~$20)</p>
                     </div>
                 </div>
                 <br>
-                <p>Additional required parts:</p>
+                <h3>Additional Required Parts</h3>
                 <br>
                 <ul>
                     <li>3 <b>USB-C to USB-C cables</b> (2 for cameras, 1 for powering LEDs; ~$10-15 total)</li>
@@ -124,135 +144,238 @@
                 <br>
                 <p><b>Total estimated cost:</b> $200-300 (excluding the VR headset)</p>
                 <br>
-                <p><b>Note: </b>Most components are available through <b>Amazon</b> with rapid shipping. However, <b>Aliexpress</b> offers significantly lower prices (see <a href="https://docs.eyetrackvr.dev/how_to_build/part_list">EyeTrackVR documentation</a> for specific links). Be aware that Aliexpress shipping typically takes 2-4 weeks, so plan accordingly if pursuing the more economical option.</p>
-                
+                <p><b>Note: </b>Most components are available through <b>Amazon</b> with rapid shipping. However, <b>AliExpress</b> offers significantly lower prices (see <a href="https://docs.eyetrackvr.dev/how_to_build/part_list">EyeTrackVR documentation</a> for specific links). 
+                    Be aware that AliExpress shipping typically takes 2-4 weeks, so plan accordingly if pursuing the more economical option.</p>
             </div>
-
+            <br>
             <div class="blur-bg-dense">
-                <h2>Assembly Considerations</h2>
+                <h2>Installation Notes</h2>
                 <br>
-                <p>
-                    When following the EyeTrackVR documentation, pay special attention to these critical points:
-                </p>
+                <p>When following the EyeTrackVR documentation, pay special attention to these critical points:</p>
                 <br>
-                <p>
-                    1. <b>Camera Ribbon Cable Fragility:</b> Minimize camera connection/disconnection cycles. After initial testing, immediately apply protective reinforcement to the ribbon cable as outlined in the <a href="https://docs.eyetrackvr.dev/how_to_build/preparing_cameras">"Protecting a Camera Ribbon Cable"</a> section. These ribbon connections are extremely delicate and prone to failure under repeated stress.
-                </p>
-                <br>
-                <div class="img__wrap center">
-                    <a href="./protectcam.png" class="img__link">
-                        <img src="./protectcam.png" alt="socialVRstream" class="img__img">
-                        <p class="img__description">Screenshot - Click to enlarge</p>
-                    </a>
-                    <p style="text-align: center;">Figure 3. Apply electrical tape reinforcement to protect the camera ribbon cable.</p>
-                <br>
-                <p>2. <b>Cable Routing Strategy:</b> Carefully plan your cable routing before permanent installation. The 3D printed camera mounts typically align the ribbon cable outlet with the USB-C port orientation. In my implementation, I intentionally routed the camera ribbon in the opposite direction of the USB-C cable to minimize cable congestion around the headset.
-                <br><br>
-                If adopting this approach, ensure thorough ribbon cable protection with electrical tape on both sides, and avoid creating sharp bends in the ribbon. Gradual curves are essential for maintaining long-term reliability.</p>
-                <br>
-                    <div class="img__wrap center">
-                        <a href="./cammount.jpg" class="img__link">
-                            <img src="./cammount.jpg" alt="socialVRstream" class="img__img">
-                            <p class="img__description">Screenshot - Click to enlarge</p>
-                        </a>
-                    </div>
-                    <br>
-                <p>3. <b>LED Circuit Orientation:</b> When assembling the EyeTrackVR official LED arrays, note that the circuits for left and right eyes are inverted relative to each other. This design consideration ensures proper IR illumination across the full visual field.</p>
                 
+                <h3>1. Camera Ribbon Cable Fragility</h3>
+                <p><b>⚠️ Notes:</b> Minimize camera connection/disconnection cycles. After initial testing, it is highly recommended to immediately apply protective measures to the ribbon cable as outlined in the <a href="https://docs.eyetrackvr.dev/how_to_build/preparing_cameras">"Protecting a Camera Ribbon Cable"</a> section. 
+                    These ribbon connections are extremely delicate and prone to failure under repeated stress.</p>
                 <br>
                 <div class="img__wrap center">
-                    <a href="./ledcircuit.png" class="img__link">
-                        <img src="./ledcircuit.png" alt="socialVRstream" class="img__img">
-                        <p class="img__description">Screenshot - Click to enlarge</p>
-                    </a>
+                    <img src="./protectcam.png" alt="Cable Protection" style="width: 100%;">
+                    <p style="text-align: center;">Figure 3: Apply electrical tape reinforcement to protect the camera ribbon cable.</p>
                 </div>
                 <br>
+                
+                <h3>2. Camera Positioning Optimization</h3>
+                <p>My final version positions the cameras at approximately <b>45° angles relative to the eye plane</b>, which:</p>
+                <ul>
+                    <li>Reduces camera blind spots at extreme viewing angles and ensures consistent pupil visibility regardless of gaze direction</li>
+                    <li>Minimizes occlusion by facial features (cheeks, nose)</li>
+                </ul>
+                <p>However, it is important to note that optimal camera angles may vary based on individual facial anatomy and headset fit. Experimentation with different angles is recommended to identify the best configuration for your specific use case.</p>
+                <br>
+                <br>
+                <div class="img__wrap center">
+                    <img src="./camerapos.png" alt="Cable Protection" style="width: 100%;">
+                    <p style="text-align: center;">Figure 3: Camera positioning at 45° angles relative to the eye plane.</p>
+                </div>
+                <br>
+                <h3>3. Cable Routing Strategy</h3>
+                <p>Carefully plan your cable routing before permanent installation. The 3D printed camera mounts typically align the ribbon cable outlet with the USB-C port orientation. In this implementation, the camera ribbon was intentionally routed in the opposite direction of the USB-C cable to minimize cable congestion around the headset.</p>
+                <br>
+                <p>If adopting this approach, ensure thorough ribbon cable protection with electrical tape on both sides, and avoid any sharp bends in the ribbon. Gradual curves are essential for maintaining long-term reliability.</p>
+                <br>
+                <div class="img__wrap center">
+                    <img src="./cammount.png" alt="Cable Protection" style="width: 100%;">
+                    <p style="text-align: center;">Figure 4: Camera mounting and cable routing example.</p>
+                </div>
+                <br>
+                
+                <h3>4. LED Circuit Orientation</h3>
+                <p>When assembling the EyeTrackVR official LED arrays (V4 module design with 4 LEDs per eye), note that the circuits for left and right eyes are inverted relative to each other. This design consideration ensures proper IR illumination across the full visual field.</p>
+                <br>
+                <div class="img__wrap center">
+                    <img src="./ledcircuit.png" alt="Cable Protection" style="width: 100%;">
+                    <p style="text-align: center;">Figure 5: LED circuit orientation for left and right eyes.</p>
+                </div>
+                <br>
+                
+                <p><b>⚠️ Notes:</b> This prototype implementation relied on temporary mounting solutions using adhesives and tape to attach components to the headset. This rough build approach was chosen to facilitate rapid iteration and testing but likely impacts the overall accuracy and stability of the system. 
+                    Future iterations should explore more permanent mounting solutions.</p>
+            </div>
+            <br>
+            <div class="blur-bg-dense">
+                <h2>Firmware Installation</h2>
+                <br>
+                <p>The microcontroller boards require appropriate firmware to function correctly. This implementation uses the wired configuration for its higher refresh rate, lower latency, and better stability.</p>
+                <br>
+                <h3>Installation Steps:</h3>
+                <ol>
+                    <li><b>Download the firmware:</b> Get the OpenIris firmware from the <a href="https://github.com/EyeTrackVR/OpenIris">official GitHub repository</a></li>
+                    <li><b>Install development environment:</b> Use Arduino IDE or PlatformIO</li>
+                    <li><b>Configure the firmware:</b> Set parameters for your hardware:
+                        <ul>
+                            <li>Camera type (OV2640, OV5640, etc.)</li>
+                            <li>Board type (ESP32-CAM or Xiao ESP32S3 Sense)</li>
+                            <li>Connection mode (Wired/Wireless)</li>
+                            <li>LED configuration and intensity</li>
+                            <li>Network settings if using wireless</li>
+                        </ul>
+                    </li>
+                    <li><b>Flash the firmware</b> to each microcontroller board using the Arduino IDE or PlatformIO</li>
+                    <li><b>Verify connectivity:</b> Access the web interface at the IP address assigned to each board. Check that:
+                        <ul>
+                            <li>IR LEDs illuminate (visible with phone camera)</li>
+                            <li>Camera feed appears in the web interface</li>
+                            <li>Pupil detection works by moving your eyes</li>
+                        </ul>
+                    </li>
+                </ol>
+                <br>
+                <p><b>Algorithm Selection:</b> This implementation uses the <b>Adaptive Starburst Hybrid Sample Feature (ASHSFRAC)</b> algorithm for pupil detection and gaze estimation, which proved most effective in testing environments.</p>
+                <br>
+                <p><b>Troubleshooting tip:</b> If experiencing connection issues, ensure your computer and the microcontroller boards are on the same WiFi network. Some institutional networks with client isolation may prevent proper communication. Consider using a dedicated WiFi router for the eye tracking system if necessary.</p>
+            </div>
+            <br>
+            <div class="blur-bg-dense">
+                <h2>Unity Integration</h2>
+                <br>
+                <p>A custom Unity program was developed for this project to handle calibration, validation, real-time visualization, and data collection.</p>
+                <br>
+                <h3>Unity Program Features:</h3>
+                <ul>
+                    <li><b>OSC Communication:</b> Receives real-time eye tracking data from EyeTrackVR firmware</li>
+                    <li><b>9-Point Calibration System:</b> With head movement compensation</li>
+                    <li><b>Validation Tools:</b> Accuracy assessment and recalibration detection</li>
+                    <li><b>Gaze Visualization:</b> Real-time visual feedback of gaze position</li>
+                    <li><b>Data Logging:</b> Comprehensive recording with timestamps</li>
+                    <li><b>Heatmap Generation:</b> Post-processing tools for attention analysis</li>
+                </ul>
+                <br>
+                
+                <!-- Placeholder for Unity interface screenshot -->
+                <div class="img__wrap center">
+                    <img src="unity_interface.png" alt="Unity Interface" style="width: 100%; background: #f0f0f0; min-height: 300px;">
+                    <p style="text-align: center;"><i>Figure 6: Unity calibration interface showing 9-point grid display (image placeholder).</i></p>
+                </div>
+                <br>
+                
+                <h3>Calibration Process:</h3>
+                <p>The calibration algorithm creates a mapping between:</p>
+                <ul>
+                    <li>Raw eye positions from tracker (normalized coordinates from EyeTrackVR's computer vision)</li>
+                    <li>Known positions of calibration points</li>
+                    <li>Head position and orientation in VR space</li>
+                </ul>
+                <br>
+                <h3>Validation and Accuracy Assessment:</h3>
+                <p>After calibration, the system measures visual angle changes when shifting gaze between validation points and compares these with actual angular separations. This determines the "wiggle room" or error margin in tracking accuracy.</p>
+                <br>
+                <p><b>Recalibration Requirements:</b> Testing showed that recalibration is typically needed after approximately <b>10 minutes</b> of use, especially after significant head movements, headset adjustments, or changes in user posture.</p>
+                <br>
+                
+                
+                <h3>Data Collection and Export:</h3>
+                <p>The system logs comprehensive data for post-processing analysis including timestamps, gaze positions (2D screen and 3D world coordinates), head position/rotation, and eye openness. Data is exported in CSV format for easy analysis.</p>
+            </div>
+            <br>
+            <div class="blur-bg-dense">
+                <h2>Performance Comparison</h2>
+                <br>
+                <p>While this DIY solution cannot match the specifications of high-end commercial systems, it provides sufficient performance for many research applications at a fraction of the cost:</p>
+                <br>
+                <table style="width:100%; border-collapse: collapse; margin: 20px 0;">
+                    <tr style="background-color: rgba(100,100,100,0.5);">
+                        <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">System</th>
+                        <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">Sampling Rate</th>
+                        <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">Accuracy</th>
+                        <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">Cost</th>
+                    </tr>
+                    <tr style="background-color: rgba(102, 126, 234, 0.1);">
+                        <td style="padding: 10px; border: 1px solid #ddd;"><b>EyeTrackVR (This Project)</b></td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">~60 Hz</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">4.8° visual angle (SD = 1.8°)</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;"><b>~$200-300</b></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border: 1px solid #ddd;">Varjo XR-3</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">200 Hz</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">&lt;0.5° visual angle</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">~$6,500</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border: 1px solid #ddd;">HTC Vive Pro Eye</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">120 Hz</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">~0.5-1.0° visual angle</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">~$1,500</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border: 1px solid #ddd;">Meta Quest Pro</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">90 Hz</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">~1° visual angle</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">~$1,000</td>
+                    </tr>
+                </table>
+                
+            </div>
+            <br>
+            <div class="blur-bg-dense">
+                <h2>Challenges and Limitations</h2>
+                <br>
+                <p>Several challenges and limitations were identified during implementation:</p>
+                <br>
+                
+                <h3>Hardware Challenges:</h3>
+                <ul>
+                    <li>Maintaining consistent IR illumination across different users with varying facial geometries</li>
+                    <li>Ensuring comfortable and secure mounting without permanent modification to VR headsets</li>
+                    <li><b>Cable management:</b> The wired solution significantly constrains user movement, which should be considered in research design</li>
+                    <li>Camera occlusion when looking at extreme angles (though minimized with 45° camera positioning)</li>
+                    <li>Temporary mounting using adhesives/tape likely contributes significantly to accuracy limitations</li>
+                </ul>
+                <br>
+                
+                <h3>Software Challenges:</h3>
+                <ul>
+                    <li><b>Frequent recalibration:</b> Needed after approximately every 10 minutes of use or after significant head movements/headset adjustments</li>
+                    <li>Occasional software freezes (3-4 times per hour, 1-3 seconds each) likely caused by high USB data demand</li>
+                    <li>Need for occasional system reboots during extended sessions</li>
+                </ul>
+                <br>
+                
+                <h3>Suitability Assessment:</h3>
+                <p>These maintenance requirements indicate that the current implementation is <b>better suited for exploratory research and early-stage demonstrations rather than extensive participant studies</b> or rigorous data collection for publication. The system serves as an excellent educational tool and proof-of-concept platform.</p>
+            </div>
+            <br>
+            <div class="blur-bg-dense">
+                <h2>Future Improvements</h2>
+                <br>
+                <p>Several promising directions for future development were identified:</p>
+                <br>
+                
+                <h3>Hardware Improvements:</h3>
+                <ul>
+                    <li><b>Mounting System:</b> The prototype's reliance on temporary adhesives likely contributes significantly to the 4.8° accuracy limitation. With more permanent and stable mounting solutions (custom-designed mounting brackets or integration with specific VR headset models), accuracy could potentially improve to 2-3° of visual angle.</li>
+                    <li><b>Multi-camera Solutions:</b> Explore additional camera angles to reduce blind spots when looking at extreme angles</li>
+                    <li><b>Modular IR Illumination:</b> Develop systems that better adapt to different users and facial geometries</li>
+                    <li><b>Improved Wire Management:</b> Create more elegant cable routing solutions</li>
+                </ul>
+                <br>
+                
+                <h3>Software Improvements:</h3>
+                <ul>
+                    <li>Investigate alternative computer vision algorithms that might improve accuracy while maintaining 60Hz refresh rate</li>
+                    <li>Implement continuous calibration mechanisms to reduce the need for manual recalibration</li>
+                    <li>Optimize data throughput to prevent occasional freezes</li>
+                    <li>Develop better diagnostic tools for troubleshooting</li>
+                </ul>
+            </div>
+            <br>
+            <div class="blur-bg-dense">
+                <h2>Conclusion</h2>
+                <br>
+                <p>This project demonstrates that <b>affordable, open-source eye tracking solutions can be successfully implemented for VR research applications</b>. While commercial systems offer higher specifications, this approach dramatically reduces the barrier to entry for eye-tracking research, making it accessible to a wider range of institutions and independent researchers.</p>
             </div>
         </div>
-        <div class="blur-bg-dense">
-            <h2>Firmware Installation</h2>
-            <br>
-            <p>The microcontroller boards require appropriate firmware to function correctly:</p>
-            <br>
-            <ol>
-                <li><b>Download the EyeTrackVR firmware</b> from the <a href="https://github.com/EyeTrackVR/OpenIris">official GitHub repository</a></li>
-                <li><b>Configure the firmware</b> according to your specific hardware configuration (camera type, board type, etc.)</li>
-                <li><b>Flash the firmware</b> to each microcontroller board using the Arduino IDE or PlatformIO</li>
-                <li><b>Verify connectivity</b> by accessing the web interface at the IP address assigned to each board</li>
-            </ol>
-            <br>
-            <p><b>Troubleshooting tip:</b> If experiencing connection issues, ensure your computer and the microcontroller boards are on the same WiFi network. Some institutional networks with client isolation may prevent proper communication.</p>
-        </div>
-        <div class="blur-bg-dense">
-            <h2>Testing with EyeTrackVR Receiver</h2>
-            <br>
-            <p>Before integrating with Unity, it's crucial to verify basic functionality using the EyeTrackVR Receiver application:</p>
-            <br>
-            <ol>
-                <li>TODO: include the python code used for basic data verification</li>
-            </ol>
-            <br>
-            <p>The receiver application provides critical diagnostic information and allows for fine-tuning of tracking parameters before proceeding to Unity integration.</p>
-        </div>
-        <div class="blur-bg-dense">
-            <h2>Unity Integration</h2>
-            <br>
-            <p>TODO: add the Unity project repository and documentation here</p>
-        </div>
-        <div class="blur-bg-dense">
-            <h2>Performance Comparison</h2>
-            <br>
-            <p>While this DIY solution cannot match the specifications of high-end commercial systems, it provides sufficient performance for many research applications:</p>
-            <br>
-            <table style="width:100%; border-collapse: collapse; margin: 20px 0;">
-                <tr style="background-color: rgba(100,100,100,0.5);">
-                    <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">System</th>
-                    <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">Sampling Rate</th>
-                    <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">Accuracy</th>
-                    <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">Cost</th>
-                </tr>
-                <tr>
-                    <td style="padding: 10px; border: 1px solid #ddd;">EyeTrackVR (This Project)</td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">~70Hz</td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">~° visual angle</td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">~$200-300</td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px; border: 1px solid #ddd;">Varjo XR-3</td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">200Hz</td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">< 0.5° visual angle</td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">~$6,500</td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px; border: 1px solid #ddd;">HTC Vive Pro Eye</td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">120Hz</td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">~0.5-1.0° visual angle</td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">~$1,500</td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px; border: 1px solid #ddd;">Meta Quest Pro</td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">90Hz</td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">~1° visual angle</td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">~$1,000</td>
-                </tr>
-            </table>
-        </div>
-        <div class="blur-bg-dense">
-            <h2>Research Applications</h2>
-            <br>
-            <p>This affordable eye-tracking solution enables various research applications that would otherwise require significantly higher investment:</p>
-            <br>
-            <ul>
-                <li>TODO</li>
-            </ul>
-        </div>
-        <div class="blur-bg-dense">
-            <h2>Conclusion</h2>
-            <br>
-            <p>This project demonstrates that affordable, open-source eye tracking solutions can be successfully implemented for VR research applications. While commercial systems offer higher specifications, this approach dramatically reduces the barrier to entry for eye-tracking research, making it accessible to a wider range of institutions and independent researchers.</p>
-            <br>
-            <p>The modular nature of this solution also allows for continued improvement and customization to meet specific research needs, representing a valuable contribution to the democratization of advanced VR research methodologies.</p>
-        </div>
+        
     </div>
     <script src="../../script.js"></script>
 </body>
