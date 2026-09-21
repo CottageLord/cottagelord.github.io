@@ -65,7 +65,7 @@ function translateChrome() {
 
     const navLabels = {
         home: '首页',
-        research: '研究',
+        research: '科研',
         coding: '编程',
         notes: '笔记与绘画',
         life: '生活与烹饪'
