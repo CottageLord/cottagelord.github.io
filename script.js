@@ -79,7 +79,7 @@ function translateChrome() {
         research: '科研',
         coding: '编程',
         notes: '笔记与绘画',
-        life: '生活与烹饪'
+        life: '烹饪与旅行'
     };
     document.querySelectorAll('.nav-links a[data-section]').forEach(link => {
         const label = navLabels[link.getAttribute('data-section')];
