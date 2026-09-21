@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VR 眼动追踪 - 进行中的项目</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="project-container">
+        <div class="blur-bg">
+            <div class="project-header">
+                <h1 class="project-title"><i>EyeTrackVR / Unity</i><br>一项评估不同 VR 多窗口管理界面的眼动追踪研究</h1>
+                <div class="project-meta">
+                    <span>[开发周期：2025.01 - 2025.05]</span> |
+                    <span>角色：独立开发者 / 研究者</span>
+                </div>
+            </div>
+
+            <div class="center">
+                <div class="img__wrap">
+                        <img src="teaser.png" alt="Project Screenshot" style="width: 100%;">
+                </div>
+                <p style="text-align: center;">图 1：沿用传统 2D 界面样式的常规 VR 桌面。</p>
+                <br>
+            </div>
+
+            <div class="blur-bg-dense">
+                <h2>项目概述</h2>
+            </div>
+
+            <div class="blur-bg-dense">
+
+                <h2>研究动机</h2><br>
+
+                <p>窗口管理与多应用窗口间的切换，是现代桌面操作系统中一项极为普遍的功能。
+                    以往研究已经为 2D 桌面界面建立了重要的设计原则，并在常规屏幕
+                    <span class="zh-tip" data-zh="Andrew Warr 等人，2016 年，《橱窗购物：桌面窗口切换研究》，发表于 计算机协会人机交互国际会议（ACM CHI）2016">[1]</span>
+                    与大屏幕
+                    <span class="zh-tip" data-zh="Lars Lischke 等人，2017 年，《大型高分辨率显示器上的窗口管理交互技术》，发表于 国际移动与泛在多媒体会议（ACM MUM）2017">[2]</span>
+                    上测试了多种窗口切换界面的呈现方式。</p>
+
+                    <br>
+
+                    <p>目前的 VR 系统常常将传统 2D 桌面界面直接映射进虚拟空间（图 1），这样可以利用用户对常规用户界面的熟悉度（例如手机界面
+                        <span class="zh-tip" data-zh="Verena Biener 等人，2020 年，《打破屏幕：面向移动知识工作者的虚拟现实触屏边界交互》，发表于 IEEE 可视化与计算机图形学汇刊（IEEE TVCG）">[3]</span>
+                        ）。然而，这种做法也可能削弱了 VR 在空间界面组织
+                        <span class="zh-tip" data-zh="Steven Feiner 等人，1993 年，《世界之窗：面向 3D 增强现实的 2D 窗口》，发表于 ACM 用户界面软件与技术研讨会（ACM UIST）1993">[4]</span>
+                        与具身交互
+                        <span class="zh-tip" data-zh="Di Laura Chen 等人，2023 年，《GazeRayCursor：融合注视与手柄射线的虚拟现实目标选择方法》，发表于 ACM 虚拟现实软件与技术研讨会（ACM VRST）2023">[5]</span>
+                        方面的独特优势。
+                    </p>
+
+                    <br><h2>研究问题</h2><br>
+
+                    <p>
+                        由此引出一个重要问题：<b>已有的窗口管理原则在多大程度上适用于 VR 环境，全新的 3D 设计方式是否能够进一步提升用户表现</b>。</p>
+
+
+                    <br><h2>研究贡献</h2><br>
+
+                    <p>本研究致力于探索两个关键维度：首先，我们希望验证已有的桌面窗口管理研究结论（如空间一致性、基于网格的布局以及缩放行为）是否依然适用于 VR 场景——在这一场景中，窗口以悬浮的 2D 平面形式存在于 3D 空间之中。
+                        其次，我们探讨如何利用 VR 在深度感知、周边感知与体积化组织方面的独特能力，设计出超越简单 2D 类比的窗口管理系统。
+                    </p>
+
+                    <br>
+
+                    <p>研究结果将为未来 VR 工作空间的设计提供参考，帮助判断 VR 是否能够超越对桌面隐喻的简单复刻，构建出真正意义上通过改进窗口管理来提升生产力的空间计算环境。
+                        本研究试图回答一个根本性问题：在常见的窗口管理任务中，VR 工作空间能否相较传统桌面计算展现出令人信服的优势。</p>
+                    <br>
+
+                    <br><h2>参考文献</h2><br>
+
+                    <p>[1] Andrew Warr, Ed H. Chi, Helen Harris, Alexander Kuscher, Jenn Chen, Robert Flack, and Nicholas Jitkoff. 2016.
+                        <span class="zh-tip" data-zh="《橱窗购物：桌面窗口切换研究》"><b>Window Shopping: A Study of Desktop Window Switching.</b></span>
+                        In Proceedings of the 2025 <span class="zh-tip" data-zh="计算机协会人机交互国际会议（ACM CHI）2016">CHI Conference on Human Factors in Computing Systems (CHI '16)</span>. Association for Computing Machinery, New York, NY, USA, 3335–3338. https://doi.org/10.1145/2858036.2858526</p>
+
+                    <br>
+
+                    <p>[2] Lars Lischke, Sven Mayer, Jan Hoffmann, Philipp Kratzer, Stephan Roth, Katrin Wolf, and Paweł Woźniak. 2017.
+                        <span class="zh-tip" data-zh="《大型高分辨率显示器上的窗口管理交互技术》"><b>Interaction techniques for window management on large high-resolution displays.</b></span>
+                        In Proceedings of the 16th <span class="zh-tip" data-zh="国际移动与泛在多媒体会议（ACM MUM）2017">International Conference on Mobile and Ubiquitous Multimedia (MUM '17)</span>. Association for Computing Machinery, New York, NY, USA, 241–247. https://doi.org/10.1145/3152832.3152852</p>
+
+                    <br>
+
+                    <p>[3] Verena Biener, Daniel Schneider, Travis Gesslein, Alexander Otte, Bastian Kuth, Per Ola Kristensson, Eyal Ofek, Michel Pahud, and Jens Grubert.
+                        2020. <span class="zh-tip" data-zh="《打破屏幕：面向移动知识工作者的虚拟现实触屏边界交互》"><b>Breaking the Screen: Interaction Across Touchscreen Boundaries in Virtual Reality for Mobile Knowledge Workers.</b></span>
+                        <span class="zh-tip" data-zh="IEEE 可视化与计算机图形学汇刊（IEEE Transactions on Visualization and Computer Graphics）">IEEE Transactions on Visualization and Computer Graphics</span> 26, 12 (2020), 3490–3502. https://doi.org/10.1109/TVCG.2020.3023567</p>
+                    <br>
+
+                    <p>[4] Steven Feiner, Blair MacIntyre, Marcus Haupt, and Eliot Solomon. 1993.
+                        <span class="zh-tip" data-zh="《世界之窗：面向 3D 增强现实的 2D 窗口》"><b>Windows on the world: 2D windows for 3D augmented reality.</b></span>
+                        In Proceedings of the 6th annual <span class="zh-tip" data-zh="ACM 用户界面软件与技术研讨会（ACM UIST）1993">ACM symposium on User interface software and technology (UIST '93)</span>. Association for Computing Machinery, New York, NY, USA, 145–155. https://doi.org/10.1145/168642.168657</p>
+
+                    <br>
+
+                    <p>[5] Di Laura Chen, Marcello Giordano, Hrvoje Benko, Tovi Grossman, and Stephanie Santosa. 2023.
+                        <span class="zh-tip" data-zh="《GazeRayCursor：融合注视与手柄射线的虚拟现实目标选择方法》"><b>GazeRayCursor: Facilitating Virtual Reality Target Selection by Blending Gaze and Controller Raycasting</b></span>.
+                        In Proceedings of the 29th <span class="zh-tip" data-zh="ACM 虚拟现实软件与技术研讨会（ACM VRST）2023">ACM Symposium on Virtual Reality Software and Technology (VRST '23)</span>. Association for Computing Machinery, New York, NY, USA, Article 19, 1–11. https://doi.org/10.1145/3611659.3615693</p>
+            </div>
+
+            <div class="blur-bg-dense">
+                <h2>计划</h2>
+            </div>
+
+            <div class="blur-bg-dense">
+                <p>我计划从零开始搭建眼动追踪硬件。以下是一个开源眼动追踪项目，可以将市面上主流的 VR 头显改装为具备眼动追踪能力的设备。</p>
+            </div>
+
+            <div class="center">
+                <div class="img__wrap">
+                    <a target="_blank" href="https://github.com/EyeTrackVR/EyeTrackVR/" class="img__link">
+                        <img src="../../media/GitHub-Emblem.png" alt="Project Screenshot" class="img_30">
+                        <p class="img__description">访问 Github 仓库</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="blur-bg-dense">
+                <p>如果这个方案行不通，我将使用 Dr. Andrew Duchowski 提供的设备。
+                    在实验设计上，我计划参考文献
+                    <span class="zh-tip" data-zh="Andrew Warr 等人，2016 年，《橱窗购物：桌面窗口切换研究》，发表于 计算机协会人机交互国际会议（ACM CHI）2016">[1]</span>
+                    中的界面设计与用户表现评估指标。
+                    面向 VR 原生的多窗口显示设计空间仍有待进一步探索。
+                </p>
+            </div>
+
+            <div class="blur-bg-dense">
+                <h2>进展更新</h2>
+            </div>
+
+            <div class="blur-bg-dense">
+                <div class="news-date">2月7日</div>
+                <p>已开始进行系统性文献综述。</p>
+            </div>
+
+            <div class="blur-bg-dense">
+                <div class="news-date">2月2日</div>
+                <p>已订购 EyeTrackVR 所需的全部部件，预计 2 月 25 日前到货（大部分从中国发货）。</p>
+            </div>
+
+            <div class="blur-bg-dense">
+                <h2>计划时间线</h2>
+                <div class="news-date">2月</div>
+                <p>完成文献综述。3 月 10 日前完成实验设计。开发带有模拟眼动数据的 Unity 项目。</p>
+                <div class="news-date">3月</div>
+                <p>开展实验并进行数据采集</p>
+                <div class="news-date">4月</div>
+                <p>撰写期末论文</p>
+            </div>
+
+
+        </div>
+    </div>
+    <script src="../../script.js"></script>
+</body>
+</html>
