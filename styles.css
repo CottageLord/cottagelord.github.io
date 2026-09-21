@@ -564,3 +564,15 @@ html, body {
         grid-template-columns: 1fr;
     }
 }
+
+.dish-en {
+    text-align: center;
+    margin-top: 0;
+    color: #888;
+    font-style: italic;
+}
+
+.card h2.dish-cn {
+    text-align: center;
+    margin-bottom: 4px;
+}
