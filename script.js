@@ -25,6 +25,17 @@ function getLanguageInfo() {
     return { isZh, isZhSite, isZhDeepPage, fileName };
 }
 
+function setFavicon(href) {
+    let link = document.querySelector('link[rel="icon"]');
+    if (!link) {
+        link = document.createElement('link');
+        link.rel = 'icon';
+        document.head.appendChild(link);
+    }
+    link.type = 'image/jpeg';
+    link.href = href;
+}
+
 function getComponentPath() {
     // Get the current path segments
     const path = window.location.pathname;
@@ -178,7 +189,10 @@ async function loadComponents() {
         if (logoImg) {
             logoImg.src = componentPath + 'logo.jpg';
         }
-        
+
+        // Use the same logo as the browser tab favicon
+        setFavicon(componentPath + 'logo.jpg');
+
         // Fix navigation links
         fixNavLinks();
 
