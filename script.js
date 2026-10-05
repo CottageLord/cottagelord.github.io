@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         setupMenuButton();
         highlightCurrentPage();
         setupZhTooltips();
+        setupTravelGallery();
     } catch (error) {
         console.error('Error in initialization:', error);
     }
@@ -233,10 +234,143 @@ function highlightCurrentPage() {
 function setupMenuButton() {
     const menuBtn = document.querySelector('.menu-btn');
     const navLinks = document.querySelector('.nav-links');
-    
+
     if (menuBtn && navLinks) {
         menuBtn.addEventListener('click', function() {
             navLinks.classList.toggle('active');
         });
     }
+}
+
+const TRAVEL_VIDEO_EXTENSIONS = ['mp4', 'mov', 'm4v'];
+
+function isTravelVideo(filename) {
+    const ext = filename.split('.').pop().toLowerCase();
+    return TRAVEL_VIDEO_EXTENSIONS.includes(ext);
+}
+
+// `displaySrc` is what gets shown in the grid (a small thumbnail for images;
+// videos have no thumbnail so they fall back to the full file with
+// preload="metadata" so only a single frame downloads, not the whole video).
+function createTravelMediaEl(displaySrc, className) {
+    if (isTravelVideo(displaySrc)) {
+        const video = document.createElement('video');
+        video.src = displaySrc;
+        video.className = className;
+        video.muted = true;
+        video.loop = true;
+        video.playsInline = true;
+        video.controls = true;
+        video.preload = 'metadata';
+        return video;
+    }
+    const img = document.createElement('img');
+    img.src = displaySrc;
+    img.loading = 'lazy';
+    img.className = className;
+    return img;
+}
+
+// Builds the foldable travel cards on the Life page from `travelPlaces`
+// (defined in Life/travel-data.js). Only one card can be open at a time:
+// opening a card folds whichever one was previously open.
+// Covers always stay in one fixed row; clicking one swaps the shared content
+// area below to show just that place's pictures, without moving any cover.
+function setupTravelGallery() {
+    const grid = document.getElementById('travel-grid');
+    if (!grid || typeof travelPlaces === 'undefined') return;
+
+    const { isZh } = getLanguageInfo();
+    const segments = window.location.pathname.split('/').filter(Boolean);
+    const isZhSite = segments.length > 0 && segments[0].toLowerCase() === 'zh';
+    const prefix = isZhSite ? '../' : './';
+    const basePath = prefix + 'Life/Travels/';
+    // Pre-shrunk copies (see Life/Travels_thumbs) used for on-page display so
+    // unfolding a place doesn't pull down dozens of multi-MB originals at once.
+    // Videos have no thumbnail and always come from basePath.
+    const thumbBasePath = prefix + 'Life/Travels_thumbs/';
+
+    function fullUrl(folder, file) {
+        return basePath + encodeURI(folder) + '/' + encodeURI(file);
+    }
+
+    function displayUrl(folder, file) {
+        if (isTravelVideo(file)) return fullUrl(folder, file);
+        return thumbBasePath + encodeURI(folder) + '/' + encodeURI(file);
+    }
+
+    const coversRow = document.createElement('div');
+    coversRow.className = 'travel-covers';
+    const content = document.createElement('div');
+    content.className = 'travel-content';
+    grid.appendChild(coversRow);
+    grid.appendChild(content);
+
+    let activeCover = null;
+    let activeFolder = null;
+
+    function closeContent() {
+        content.style.maxHeight = '0px';
+        if (activeCover) activeCover.classList.remove('active');
+        activeCover = null;
+        activeFolder = null;
+    }
+
+    function openContent(place, coverEl) {
+        if (activeCover) activeCover.classList.remove('active');
+        activeCover = coverEl;
+        activeFolder = place.folder;
+        coverEl.classList.add('active');
+
+        content.innerHTML = '';
+        const thumbGrid = document.createElement('div');
+        thumbGrid.className = 'travel-thumb-grid';
+        place.items.forEach(file => {
+            const link = document.createElement('a');
+            link.href = fullUrl(place.folder, file);
+            link.target = '_blank';
+            link.className = 'travel-thumb';
+            link.appendChild(createTravelMediaEl(displayUrl(place.folder, file), 'travel-thumb-media'));
+            thumbGrid.appendChild(link);
+        });
+        content.appendChild(thumbGrid);
+
+        content.style.maxHeight = content.scrollHeight + 'px';
+        // Media loads asynchronously; grow to fit as each item finishes loading.
+        content.querySelectorAll('img, video').forEach(el => {
+            const grow = () => {
+                if (activeFolder === place.folder) {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                }
+            };
+            el.addEventListener('load', grow);
+            el.addEventListener('loadedmetadata', grow);
+        });
+    }
+
+    travelPlaces.forEach(place => {
+        const cover = document.createElement('div');
+        cover.className = 'travel-cover';
+        cover.appendChild(createTravelMediaEl(displayUrl(place.folder, place.cover), 'travel-cover-media'));
+        const name = document.createElement('span');
+        name.className = 'travel-name';
+        name.textContent = isZh ? (place.nameZh || place.nameEn) : place.nameEn;
+        cover.appendChild(name);
+
+        cover.addEventListener('click', () => {
+            if (activeFolder === place.folder) {
+                closeContent();
+            } else {
+                openContent(place, cover);
+            }
+        });
+
+        coversRow.appendChild(cover);
+    });
+
+    window.addEventListener('resize', () => {
+        if (activeFolder) {
+            content.style.maxHeight = content.scrollHeight + 'px';
+        }
+    });
 }
