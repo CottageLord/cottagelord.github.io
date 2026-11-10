@@ -69,6 +69,12 @@ function fixNavLinks() {
             link.href = newHref;
         }
     });
+
+    // Hidden footer clock -> countdown page at the site root (same relative scheme as nav links)
+    const clockLink = document.querySelector('.hidden-clock');
+    if (clockLink) {
+        clockLink.href = getComponentPath() + '../countdown.html';
+    }
 }
 
 function translateChrome() {
@@ -94,9 +100,11 @@ function translateChrome() {
     }
 
     document.querySelectorAll('.single-footer-widget h6').forEach(h6 => {
-        const text = h6.textContent.trim();
-        if (text === 'About Me') h6.textContent = '关于我';
-        if (text === 'Follow Me') h6.textContent = '关注我';
+        // Translate only the label so extra elements (e.g. the hidden clock link) survive
+        const target = h6.querySelector('.footer-heading-text') || h6;
+        const text = target.textContent.trim();
+        if (text === 'About Me') target.textContent = '关于我';
+        if (text === 'Follow Me') target.textContent = '关注我';
     });
     const footerText = document.querySelector('.footer-text');
     if (footerText) {

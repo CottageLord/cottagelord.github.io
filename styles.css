@@ -439,6 +439,20 @@ html, body {
     font-weight: 500;
 }
 
+.hidden-clock {
+    color: #555;
+    margin-left: 0.4rem;
+    font-size: 0.75rem;
+    text-decoration: none;
+    opacity: 0.6;
+    transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+.hidden-clock:hover {
+    color: #fff;
+    opacity: 1;
+}
+
 .footer-text {
     font-size: 0.8rem;
     margin-top: 0.5rem;

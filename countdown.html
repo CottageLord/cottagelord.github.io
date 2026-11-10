@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>倒计时 · 北京时间 11月17日 11:45</title>
+<style>
+  :root { --bg:#0f1115; --fg:#f3f4f6; --muted:#9ca3af; --accent:#f59e0b; --card:#1a1d24; }
+  @media (prefers-color-scheme: light) {
+    :root { --bg:#f7f7f5; --fg:#111827; --muted:#6b7280; --accent:#d97706; --card:#ffffff; }
+  }
+  * { box-sizing:border-box; margin:0; }
+  body { min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    background:var(--bg); color:var(--fg); font-family:-apple-system,"PingFang SC","Noto Sans SC",system-ui,sans-serif; padding:24px; }
+  h1 { font-size:15px; font-weight:500; color:var(--muted); letter-spacing:.05em; margin-bottom:28px; text-align:center; }
+  .grid { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; width:100%; max-width:560px; }
+  .cell { background:var(--card); border-radius:14px; padding:18px 4px 14px; text-align:center;
+    box-shadow:0 1px 2px rgba(0,0,0,.08); }
+  .num { font-size:clamp(34px,11vw,64px); font-weight:700; font-variant-numeric:tabular-nums; line-height:1; }
+  .lbl { font-size:13px; color:var(--muted); margin-top:8px; }
+  .sec .num { color:var(--accent); }
+  .meta { margin-top:28px; font-size:13px; color:var(--muted); text-align:center; line-height:1.8; }
+  .back { position:fixed; top:16px; left:16px; color:var(--muted); text-decoration:none; font-size:14px;
+    padding:6px 12px; border-radius:999px; background:var(--card); box-shadow:0 1px 2px rgba(0,0,0,.08); transition:color .2s; }
+  .back:hover { color:var(--accent); }
+  .done { font-size:28px; font-weight:700; color:var(--accent); margin-top:8px; display:none; }
+</style>
+</head>
+<body>
+  <a class="back" id="back" href="index.html">← 返回 / Back</a>
+  <h1>距离 北京时间 2026年11月17日 11:45:00</h1>
+  <div class="grid" id="grid">
+    <div class="cell"><div class="num" id="d">0</div><div class="lbl">天</div></div>
+    <div class="cell"><div class="num" id="h">00</div><div class="lbl">时</div></div>
+    <div class="cell"><div class="num" id="m">00</div><div class="lbl">分</div></div>
+    <div class="cell sec"><div class="num" id="s">00</div><div class="lbl">秒</div></div>
+  </div>
+  <div class="done" id="done">⏰ 时间到！</div>
+  <div class="meta">
+    <div>目标时刻（换算成你的本地时间）：<span id="local"></span></div>
+    <div>当前北京时间：<span id="bj"></span></div>
+  </div>
+<script>
+  // Go back to the page we came from (English or Chinese site); otherwise fall back to the homepage
+  document.getElementById('back').addEventListener('click', e => {
+    try {
+      if (document.referrer && new URL(document.referrer).origin === location.origin && history.length > 1) {
+        e.preventDefault();
+        history.back();
+      }
+    } catch (_) {}
+  });
+  const TARGET = Date.parse('2026-11-17T11:45:00+08:00');
+  const pad = n => String(n).padStart(2,'0');
+  const $ = id => document.getElementById(id);
+  const fmt = (tz) => new Intl.DateTimeFormat('zh-CN', {timeZone:tz, year:'numeric', month:'2-digit', day:'2-digit',
+    hour:'2-digit', minute:'2-digit', second:'2-digit', hour12:false}).format(new Date());
+  function tick() {
+    const diff = TARGET - Date.now();
+    $('bj').textContent = fmt('Asia/Shanghai');
+    $('local').textContent = new Intl.DateTimeFormat('zh-CN', {month:'2-digit', day:'2-digit', hour:'2-digit', minute:'2-digit', hour12:false, timeZoneName:'short'}).format(new Date(TARGET));
+    if (diff <= 0) {
+      ['d','h','m','s'].forEach(k => $(k).textContent = k==='d' ? '0' : '00');
+      $('done').style.display = 'block';
+      return;
+    }
+    const t = Math.floor(diff/1000);
+    $('d').textContent = Math.floor(t/86400);
+    $('h').textContent = pad(Math.floor(t%86400/3600));
+    $('m').textContent = pad(Math.floor(t%3600/60));
+    $('s').textContent = pad(t%60);
+  }
+  tick();
+  setTimeout(function loop(){ tick(); setTimeout(loop, 1000 - Date.now()%1000); }, 1000 - Date.now()%1000);
+</script>
+</body>
+</html>
