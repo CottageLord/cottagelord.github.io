@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>倒计时 · 北京时间 11月17日 11:45</title>
+<title>Countdown · Nov 17, 11:45 Beijing Time</title>
 <style>
   :root { --bg:#0f1115; --fg:#f3f4f6; --muted:#9ca3af; --accent:#f59e0b; --card:#1a1d24; }
   @media (prefers-color-scheme: light) {
@@ -11,7 +11,7 @@
   }
   * { box-sizing:border-box; margin:0; }
   body { min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center;
-    background:var(--bg); color:var(--fg); font-family:-apple-system,"PingFang SC","Noto Sans SC",system-ui,sans-serif; padding:24px; }
+    background:var(--bg); color:var(--fg); font-family:-apple-system,"Segoe UI",system-ui,sans-serif; padding:24px; }
   h1 { font-size:15px; font-weight:500; color:var(--muted); letter-spacing:.05em; margin-bottom:28px; text-align:center; }
   .grid { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; width:100%; max-width:560px; }
   .cell { background:var(--card); border-radius:14px; padding:18px 4px 14px; text-align:center;
@@ -23,25 +23,35 @@
   .back { position:fixed; top:16px; left:16px; color:var(--muted); text-decoration:none; font-size:14px;
     padding:6px 12px; border-radius:999px; background:var(--card); box-shadow:0 1px 2px rgba(0,0,0,.08); transition:color .2s; }
   .back:hover { color:var(--accent); }
+  .since { margin-top:36px; text-align:center; }
+  .since .cell { display:inline-block; min-width:140px; padding:18px 24px 14px; }
+  .since .num { color:var(--accent); }
+  .sign { position:fixed; bottom:16px; left:0; right:0; text-align:center; font-size:14px;
+    letter-spacing:.2em; color:var(--muted); }
   .done { font-size:28px; font-weight:700; color:var(--accent); margin-top:8px; display:none; }
 </style>
 </head>
 <body>
-  <a class="back" id="back" href="index.html">← 返回 / Back</a>
-  <h1>距离 北京时间 2026年11月17日 11:45:00</h1>
+  <a class="back" id="back" href="index.html">← Back</a>
+  <h1>Until Nov 17, 2026, 11:45:00 Beijing Time</h1>
   <div class="grid" id="grid">
-    <div class="cell"><div class="num" id="d">0</div><div class="lbl">天</div></div>
-    <div class="cell"><div class="num" id="h">00</div><div class="lbl">时</div></div>
-    <div class="cell"><div class="num" id="m">00</div><div class="lbl">分</div></div>
-    <div class="cell sec"><div class="num" id="s">00</div><div class="lbl">秒</div></div>
+    <div class="cell"><div class="num" id="d">0</div><div class="lbl">Days</div></div>
+    <div class="cell"><div class="num" id="h">00</div><div class="lbl">Hours</div></div>
+    <div class="cell"><div class="num" id="m">00</div><div class="lbl">Minutes</div></div>
+    <div class="cell sec"><div class="num" id="s">00</div><div class="lbl">Seconds</div></div>
   </div>
-  <div class="done" id="done">⏰ 时间到！</div>
+  <div class="done" id="done">⏰ Time's up!</div>
   <div class="meta">
-    <div>目标时刻（换算成你的本地时间）：<span id="local"></span></div>
-    <div>当前北京时间：<span id="bj"></span></div>
+    <div>Target time in your local time zone: <span id="local"></span></div>
+    <div>Current Beijing time: <span id="bj"></span></div>
   </div>
+  <div class="since">
+    <h1>Since Jun 23, 2026, Beijing Time</h1>
+    <div class="cell"><div class="num" id="since">0</div><div class="lbl">Days</div></div>
+  </div>
+  <div class="sign">MJ</div>
 <script>
-  // Go back to the page we came from (English or Chinese site); otherwise fall back to the homepage
+  // Go back to the page we came from; otherwise fall back to the homepage
   document.getElementById('back').addEventListener('click', e => {
     try {
       if (document.referrer && new URL(document.referrer).origin === location.origin && history.length > 1) {
@@ -51,14 +61,17 @@
     } catch (_) {}
   });
   const TARGET = Date.parse('2026-11-17T11:45:00+08:00');
+  const SINCE = Date.parse('2026-06-23T00:00:00+08:00');
   const pad = n => String(n).padStart(2,'0');
   const $ = id => document.getElementById(id);
-  const fmt = (tz) => new Intl.DateTimeFormat('zh-CN', {timeZone:tz, year:'numeric', month:'2-digit', day:'2-digit',
+  const fmt = (tz) => new Intl.DateTimeFormat('en-US', {timeZone:tz, year:'numeric', month:'short', day:'numeric',
     hour:'2-digit', minute:'2-digit', second:'2-digit', hour12:false}).format(new Date());
   function tick() {
+    // Whole Beijing calendar days elapsed since 2026-06-23 (00:00 Beijing time)
+    $('since').textContent = Math.max(0, Math.floor((Date.now() - SINCE) / 86400000));
     const diff = TARGET - Date.now();
     $('bj').textContent = fmt('Asia/Shanghai');
-    $('local').textContent = new Intl.DateTimeFormat('zh-CN', {month:'2-digit', day:'2-digit', hour:'2-digit', minute:'2-digit', hour12:false, timeZoneName:'short'}).format(new Date(TARGET));
+    $('local').textContent = new Intl.DateTimeFormat('en-US', {month:'short', day:'numeric', hour:'2-digit', minute:'2-digit', hour12:false, timeZoneName:'short'}).format(new Date(TARGET));
     if (diff <= 0) {
       ['d','h','m','s'].forEach(k => $(k).textContent = k==='d' ? '0' : '00');
       $('done').style.display = 'block';

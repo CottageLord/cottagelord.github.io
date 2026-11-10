@@ -70,10 +70,10 @@ function fixNavLinks() {
         }
     });
 
-    // Hidden footer clock -> countdown page at the site root (same relative scheme as nav links)
+    // Hidden footer clock -> countdown page in the current language (same relative scheme as nav links)
     const clockLink = document.querySelector('.hidden-clock');
     if (clockLink) {
-        clockLink.href = getComponentPath() + '../countdown.html';
+        clockLink.href = getComponentPath() + (isZh ? '../zh/countdown.html' : '../countdown.html');
     }
 }
 
